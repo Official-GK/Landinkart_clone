@@ -1,0 +1,21 @@
+{
+  "name": "lendingkart-clone",
+  "version": "1.0.0",
+  "description": "LendingKart Website Clone",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Official-GK/Lendikart_Clone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Official-GK/Lendikart_Clone/issues"
+  },
+  "homepage": "https://Official-GK.github.io/Lendikart_Clone"
+} 
