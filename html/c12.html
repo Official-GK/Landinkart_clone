@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Working Capital Loan EMI Calculator - Lendingkart</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/Users/gauravkulkarni/Desktop/1st-year -prj/css/navbar.css">
+    <link rel="stylesheet" href="/Users/gauravkulkarni/Desktop/1st-year -prj/css/eligibility-cards.css">
+    <link rel="stylesheet" href="../css/c12.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="../js/logo-redirect.js" defer></script>
+    <style>
+        /* Remove calculator-specific styles from here. Only keep layout/global styles. */
+        .page-layout {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .right-sidebar {
+            width: 350px;
+            flex-shrink: 0;
+        }
+        h1, h2, h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            color: #12a9c0;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #12a9c0;
+            font-weight: bold;
+        }
+        .faq-item {
+            background: #f8f8f8;
+            border: 1px solid #efefef;
+            border-radius: 4px 4px 0 0;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:after {
+            content: "+";
+            font-size: 24px;
+            opacity: 0.7;
+        }
+        @media (max-width: 1024px) {
+            .page-layout {
+                flex-direction: column;
+                gap: 0;
+            }
+            .right-sidebar {
+                width: 100%;
+                margin-top: 30px;
+            }
+        }
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+            flex-grow: 1;
+        }
+        
+        .toggle-icon {
+            font-size: 20px;
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="../assets/icons/logo.png" alt="Website Logo" />
+        </div>
+        <ul class="navbar-menu">
+            <li class="navbar-item dropdown">
+                <a href="#">Products</a>
+                <ul class="dropdown-menu">
+                    <li><a href="A1.html">Business Loan</a></li>
+                    <li><a href="A2.html">Working Capital Loan</a></li>
+                    <li><a href="A3.html">SME Loan</a></li>
+                    <li><a href="A4.html">Business Loan for Women</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Partners</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Enterprise Solution</a></li>
+                    <li><a href="#">Become a Channel Partner</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Calculator</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="#">EMI Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c11.html">Business Loan EMI Calculator-Quick & Easy Estimation</a></li>
+                            <li><a href="c12.html">Working Capital Loan EMI Calculator-Lendinkart</a></li>
+                            <li><a href="c13.html">Commercial Loan EMI Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Tax Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c21.html">GST Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Saving Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c31.html">FD Calculator</a></li>
+                            <li><a href="c32.html">Recurring Deposit Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Loan Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c41.html">Foreclosure Calculator</a></li>
+                            <li><a href="c42.html">GST Invoice Generator</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Resource</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Blog: Business</a></li>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Quick Links</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <a href="login.html" class="navbar-btn outline">Login</a>
+            <a href="apply.html" class="navbar-btn filled">Apply Now</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="page-layout">
+        <div class="main-content">
+            <h1>Working Capital Loan EMI Calculator – Lendingkart</h1>
+            
+            <p>The Working Capital Loan EMI Calculator efficiently computes monthly installments for businesses seeking financial support. This tool aids in budget planning, offering insights into repayment schedules, interest rates, and loan durations. By accurately forecasting cash flows, businesses can make informed decisions, ensuring optimal financial management and sustainable growth.</p>
+            
+            <div class="calculator-container">
+                <div class="input-section">
+                    <label class="input-label">Loan Amount</label>
+                    <div class="slider-container">
+                        <input type="range" id="loanAmount" min="100000" max="5000000" value="100000" step="10000" class="slider">
+                        <div class="value-box" id="loanAmount-value">₹1,00,000</div>
+                    </div>
+                    <div class="input-range">
+                        <span>₹1,00,000</span>
+                        <span>₹50,00,000</span>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <label class="input-label">Tenure (Months)</label>
+                    <div class="slider-container">
+                        <input type="range" id="tenure" min="6" max="36" value="6" step="1" class="slider">
+                        <div class="value-box" id="tenure-value">6</div>
+                    </div>
+                    <div class="input-range">
+                        <span>6 Months</span>
+                        <span>36 Months</span>
+                    </div>
+                </div>
+                <div class="input-section">
+                    <label class="input-label">Interest Rate (%)</label>
+                    <div class="slider-container">
+                        <input type="range" id="interestRate" min="13.5" max="35" value="13.5" step="0.1" class="slider">
+                        <div class="value-box" id="interestRate-value">13.5%</div>
+                    </div>
+                    <div class="input-range">
+                        <span>13.5%</span>
+                        <span>35%</span>
+                    </div>
+                </div>
+                <button class="calculate-btn">Calculate</button>
+                <div class="results-container" id="resultsContainer">
+                    <div class="results-text">
+                        <div class="result-item">
+                            <div class="result-label">Monthly EMI</div>
+                            <div class="result-value" id="emiResult">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Interest</div>
+                            <div class="result-value" id="interestResult">₹0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Payment</div>
+                            <div class="result-value" id="totalResult">₹0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>Working Capital Loan EMI Calculated?</h2>
+            <p>Understanding how Working Capital Loan EMIs are calculated is crucial for businesses seeking financial support. The calculation process involves several factors such as loan amount, tenure, and interest rates, which determine the monthly installment payments. Explaining the process of EMI calculator for <strong>working capital loan</strong> provides clarity and enables businesses to make informed decisions regarding their financial obligations.</p>
+            
+            <ul>
+                <li><strong>Loan Amount:</strong> The principal amount borrowed from the lender.</li>
+                <li><strong>Loan Tenure:</strong> The duration over which the loan is repaid, typically in months.</li>
+                <li><strong>Interest Rate:</strong> The percentage charged by the lender on the borrowed amount.</li>
+                <li><strong>EMI Calculation Formula:</strong> Typically computed using the formula: EMI = [P x R x (1+R)^N] / [(1+R)^N-1], where P is the principal amount, R is the monthly interest rate, and N is the number of monthly installments.</li>
+                <li><strong>Principal Amount:</strong> The portion of each EMI payment allocated to repaying the loan amount.</li>
+                <li><strong>Interest Amount:</strong> The portion of each EMI payment allocated to paying interest charges.</li>
+                <li><strong>Monthly EMI:</strong> The fixed amount paid by the borrower to the lender every month.</li>
+                <li><strong>Total Payable Amount:</strong> The sum of all EMIs over the loan tenure, including both principal and interest amounts.</li>
+                <li><strong>Importance of Understanding:</strong> Helps businesses forecast cash flows, budget effectively, and ensure timely repayments.</li>
+                <li><strong>Accessibility:</strong> Online tools like Lendingkart's Working Capital Loan EMI Calculator simplify the calculation process for businesses, enabling them to plan their finances efficiently.</li>
+            </ul>
+            
+            <h2>Understanding Working Capital Loans</h2>
+            <p>Working capital loans are short-term financial solutions designed to help businesses manage their day-to-day operations. These loans provide the necessary funds to cover immediate expenses, such as inventory purchases, payroll, or unexpected costs. A working capital loan calculator can help businesses determine the appropriate loan amount and repayment terms.</p>
+            
+            <p>Businesses often seek working capital loans when facing:</p>
+            
+            <ul>
+                <li><strong>Seasonal fluctuations in revenue:</strong> Many businesses experience cyclical sales patterns, with peak and off-seasons. During slower periods, a working capital loan can help cover ongoing expenses and maintain operations until revenue picks up again.</li>
+                <li><strong>Irregular cash flow due to delayed client payments:</strong> When customers are slow to pay invoices, it can create cash flow gaps. Working capital loans provide immediate funds to bridge these gaps. It allows businesses to pay suppliers, employees, and other expenses on time.</li>
+                <li><strong>Unexpected expenses or emergencies:</strong> Unforeseen costs, such as equipment breakdowns or sudden market changes, can strain a company's finances. Working capital loans offer quick access to funds, helping businesses address these emergencies without disrupting normal operations.</li>
+            </ul>
+            
+            <p>By using a cc loan calculator or cash credit calculator, businesses can estimate the costs associated with different loan options. This helps in making informed decisions about financing their short-term operational needs.</p>
+            
+            <h2>Using Working Capital Loan EMI Calculator</h2>
+            <p>Understanding your monthly repayment obligations is crucial when considering an online working capital loan. A cc EMI calculator can help you determine the equated monthly installments (EMIs) for your loan.</p>
+            
+            <p>To calculate your EMI:</p>
+            
+            <ol>
+                <li>Input the loan amount</li>
+                <li>Specify the loan amount</li>
+                <li>Enter the loan interest rate</li>
+            </ol>
+            
+            <p>The online working capital loan calculator will provide you with the monthly EMI amount. This information helps in budgeting and ensures you can meet your repayment obligations comfortably.</p>
+            
+            <h2>How to Calculate Interest on Working Capital Loan?</h2>
+            <p>To use a working capital loan EMI calculator on Lendingkart, you just have to input some details. Here is how you can use the working capital loan calculator:</p>
+            
+            <ul>
+                <li><strong>Loan Parameters:</strong> Enter loan amount ranging from 1 lakh to 2 crore.</li>
+                <li><strong>Tenure:</strong> Choose a tenure between 6 months to 36 months.</li>
+                <li><strong>Interest Rate:</strong> Input interest rates from 1% to 21%.</li>
+                <li><strong>Calculation Results:</strong> The calculator displays the principal amount, interest amount, and monthly EMI.</li>
+                <li><strong>Total Payable Amount:</strong> It also presents the total amount payable by the borrower, ensuring transparency in financial planning.</li>
+                <li><strong>Benefits:</strong> Enables businesses to make informed decisions, allocate budgets efficiently, and ensure financial stability.</li>
+                <li><strong>Ease of Use:</strong> Simplifies the calculation process, aiding businesses in managing their working capital loans effectively.</li>
+            </ul>
+            
+            <h2>Benefits of Working Capital Loan Calculator</h2>
+            <ul>
+                <li><strong>Financial Planning:</strong> Streamlines financial planning by offering insights into monthly installment payments.</li>
+                <li><strong>Transparency:</strong> Provides clear breakdowns of principal amounts, interest, and monthly EMIs for better understanding.</li>
+                <li><strong>Decision Making:</strong> Empowers businesses with data to make informed decisions on loan parameters.</li>
+                <li><strong>Time Saving:</strong> Automates calculations, saving valuable time for users.</li>
+                <li><strong>Accuracy:</strong> Ensures precise calculations, minimizing errors in financial projections.</li>
+                <li><strong>Flexibility:</strong> Allows customization of loan parameters to suit specific needs.</li>
+                <li><strong>User-Friendly:</strong> Simple interface makes it accessible for businesses of all sizes.</li>
+                <li><strong>Stability:</strong> Contributes to financial stability by aiding in clear loan repayment planning.</li>
+            </ul>
+            
+            <h2>Types of Working Capital Loans</h2>
+            <p>There are several types of online working capital loans available to businesses, each suited to different needs:</p>
+            
+            <ul>
+                <li><strong>Cash Credit:</strong> A flexible borrowing option where you can withdraw funds up to a predetermined limit. Use our cc interest calculator to estimate costs.</li>
+                <li><strong>Line of Credit:</strong> Similar to cash credit, but often with more flexible terms.</li>
+                <li><strong>Invoice Discounting:</strong> Borrow against unpaid invoices to improve cash flow.</li>
+                <li><strong>Short-Term Loans:</strong> Fixed-amount loans with specific repayment terms.</li>
+                <li><strong>Merchant Cash Advance:</strong> Funding based on future credit card sales.</li>
+            </ul>
+            
+            <p>When choosing a loan type, consider using LendingKart's online working capital loan calculator to determine the optimal borrowing amount for your business needs.</p>
+            
+            <h2>Features of Working Capital Loans</h2>
+            <p>Working capital loans offer several advantages for businesses:</p>
+            
+            <ul>
+                <li><strong>Higher Loan Amounts:</strong> Borrow from ₹50 lakh to ₹2 crore from LendingKart to meet substantial operational needs.</li>
+                <li><strong>Collateral-Free Options:</strong> Many lenders offer unsecured loans, eliminating the need for collateral.</li>
+                <li><strong>Quick Approval and Disbursement:</strong> Get funds faster to address urgent financial requirements.</li>
+                <li><strong>Flexible Use of Funds:</strong> Allocate the loan amount as needed for various operational expenses.</li>
+                <li><strong>Online Processing:</strong> Apply and manage your loan conveniently through digital platforms.</li>
+                <li><strong>Customizable Terms:</strong> Use a cc limit interest rate calculator or working capital loan calculator to compare different loan terms and find the best fit for your business.</li>
+            </ul>
+            
+            <p>By utilizing tools like our online working capital loan calculator, businesses can make informed decisions about their financing options. They can choose the most suitable working capital loan for their needs.</p>
+            
+            <h2>Steps to Apply For Working Capital Loan</h2>
+            <ul>
+                <li><strong>Eligibility Check:</strong> Determine eligibility for a <strong>business loan</strong> in just 2 minutes with basic details.</li>
+                <li><strong>Document Upload:</strong> Complete application by uploading required documents within 24 hours.</li>
+                <li><strong>Loan Offer:</strong> Receive a fair loan offer within 24 hours after evaluation.</li>
+                <li><strong>Agreement Signing:</strong> Sign the loan agreement and provide KYC documents within 24 hours.</li>
+                <li><strong>Funds Disbursement:</strong> Funds will be transferred to your account upon verification.</li>
+                <li><strong>Required Documents:</strong> PAN Card, Aadhaar Card, Bank Statement, Registration Proof, Partnership Deed/Company PAN (for Partnership, Pvt. Ltd., or LLC companies).</li>
+                <li><strong>Loan Terms:</strong> Loan Amount: ₹50,000 – ₹2 Crore; Interest Rates: 1-2% per month; Loan Tenure: 1 month – 5 years; Pre-Closure Fee: ₹0/-</li>
+            </ul>
+            
+            <section class="faq-section">
+                <h2>Frequently Asked Questions:</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What is a Working Capital Loan EMI Calculator?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>A Working Capital Loan EMI Calculator helps you calculate your monthly payments for a working capital loan. It considers the loan amount, interest rate, and repayment period to show your exact EMI amount.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>How is working capital loan EMI calculated?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Working capital loan EMI is calculated using the standard EMI formula: EMI = P × r × (1 + r)^n / ((1 + r)^n - 1), where P is the principal amount, r is the monthly interest rate, and n is the number of monthly installments.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What factors affect my working capital loan EMI?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Your EMI is affected by the loan amount, interest rate, and repayment tenure. Higher loan amounts and interest rates increase EMI, while longer tenures reduce monthly payments but increase total interest.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>Can I prepay my working capital loan?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes, most lenders allow prepayment of working capital loans after a certain period (usually 6 months) with minimal or no charges. Prepayment can help reduce your total interest burden.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What happens if I miss an EMI payment?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Missing an EMI payment may result in late payment charges, affect your credit score, and impact future loan eligibility. It's important to maintain regular payments.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="right-sidebar">
+            <!-- Eligibility Form -->
+            <div class="eligibility-form">
+                <h2 class="eligibility-title">Check your eligibility</h2>
+                <p style="margin-bottom: 20px;">Get your loan eligibility checked in just a few seconds!</p>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email ID</label>
+                        <input type="email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Do you have business registration proof?</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Monthly Sales</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">How old is your business</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="0-1">Less than 1 year</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">More than 5 years</option>
+                        </select>
+                    </div>
+                    <div style="background: #f8f8f8; padding: 10px; margin: 20px 0; text-align: center;">
+                        All the fields are mandatory
+                    </div>
+                    <button type="button" class="check-eligibility-btn">Check Eligibility</button>
+                    <div class="terms-text">
+                        I hereby confirm that I have read, understood and agree to the mentioned 
+                        <a href="#">T&C</a>, <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+                        and receive communication via SMS, E-mail, and Whatsapp. I hereby authorise 
+                        Lendingkart Finance Limited (LFL), its affiliate(s) and lending partners, 
+                        to view, save, download and store CKYCR records, update or report my KYC 
+                        details with the Central KYC Registry (CERSAI) and further authorise LFL 
+                        to share this information with its affiliate(s) and lending partners.
+                    </div>
+                </form>
+            </div>
+            <!-- Sidebar Cards -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ZED Certification Scheme and Why It Matters for MSMEs in India</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ISO MSME Reimbursement Scheme and How Can It Benefit Your Business?</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is CGST?</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What is P2P Lending? Everything You Need to Know About Peer-to-Peer Loans</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Pros and Cons of MSME Loans: A Balanced Guide for Small Business Owners</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business loan</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Apply Online Business Loans in Bangalore up to ₹50 Lakhs</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Eligibility</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Interest Rate</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan EMI Calculator – Quick & Easy Estimation</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Instant Business Loan</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/eligibility-check.js"></script>
+    <script src="../js/c12.js"></script>
+    <div id="chatbot-fab" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="avatar"></div>
+            <span>GK BoT</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="query">
+            <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+    <script src="../js/chatbot.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const toggleIcon = this.querySelector('.toggle-icon');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.style.display = 'none';
+                            item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current answer
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                        toggleIcon.textContent = '−';
+                    } else {
+                        answer.style.display = 'none';
+                        toggleIcon.textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

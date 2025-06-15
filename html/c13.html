@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commercial Loan EMI Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+    <link rel="stylesheet" href="../css/c13.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/eligibility-cards.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="../js/logo-redirect.js" defer></script>
+</head>
+<body>
+    <div class="page-layout">
+        <div class="main-content">
+            
+            <!-- Calculator Section -->
+            <div class="calculator-container">
+                <div class="calculator-title">
+                    <h1>Calculate Your Commercial Loan EMI: Rates & Monthly Payments</h1>
+                </div>
+                
+                <form class="calculator-form">
+                    <!-- Loan Amount -->
+                    <div class="input-group">
+                        <label>Loan Amount</label>
+                        <div class="value-display">₹1,00,000</div>
+                        <div class="input-range">
+                            <div class="track"></div>
+                            <div class="thumb"></div>
+                        </div>
+                        <div class="range-values">
+                            <span>₹1 Lakh</span>
+                            <span>₹50 Lakhs</span>
+                        </div>
+                        <input type="number" value="100000" min="100000" max="5000000" step="100000">
+                    </div>
+                    
+                    <!-- Tenure -->
+                    <div class="input-group">
+                        <label>Tenure (in months)</label>
+                        <div class="value-display">6 Months</div>
+                        <div class="input-range">
+                            <div class="track"></div>
+                            <div class="thumb"></div>
+                        </div>
+                        <div class="range-values">
+                            <span>6 Months</span>
+                            <span>36 Months</span>
+                        </div>
+                        <input type="number" value="6" min="6" max="36" step="1">
+                    </div>
+                    
+                    <!-- Interest Rate -->
+                    <div class="input-group">
+                        <label>Interest Rate (per annum)</label>
+                        <div class="value-display">13.5%</div>
+                        <div class="input-range">
+                            <div class="track"></div>
+                            <div class="thumb"></div>
+                        </div>
+                        <div class="range-values">
+                            <span>13.5%</span>
+                            <span>35%</span>
+                        </div>
+                        <input type="number" value="13.5" min="13.5" max="35" step="0.1">
+                    </div>
+                    
+                    <button type="button" class="calculate-btn">Calculate</button>
+                    
+                    <!-- Results -->
+                    <div class="results-container">
+                        <div class="chart-container">
+                            <!-- Chart will go here -->
+                            <div style="width: 100%; height: 100%; background: #f5f5f5; display: flex; justify-content: center; align-items: center;">
+                                [Chart Placeholder]
+                            </div>
+                        </div>
+                        
+                        <div class="results-summary">
+                            <div class="result-item">
+                                <div class="result-label">Principal Amount</div>
+                                <div class="result-value principal-amount">Rs.1,00,000</div>
+                            </div>
+                            
+                            <div class="result-item">
+                                <div class="result-label">Interest Amount</div>
+                                <div class="result-value interest-amount">Rs.3,974</div>
+                            </div>
+                            
+                            <div class="result-item">
+                                <div class="result-label">Monthly EMI</div>
+                                <div class="result-value">Rs.17,329</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="total-payable">
+                        Total Amount Payable: Rs.1,03,974
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Content Sections -->
+            <div class="content-section">
+                <h2>Factors that affect Commercial loan EMIs:</h2>
+                <p>Business or Commercial loan has been one of the most common methods of borrowing money from external sources like banks and nonbanking financial companies to start a new business venture or expansion of an existing business.</p>
+                
+                <h3>To begin with, let us understand what a loan is?</h3>
+                <p>Loan can be referred to as the money lent to an individual, organization, or other domains by an individual, organization, or financial entity. The recipient of the investment is then liable to pay regular interest on the loan amount as well as repay the principal amount borrowed within a stipulated time frame, by way of EMIs.</p>
+                
+                <h3>What is an Commercial Loan EMI?</h3>
+                <p>An EMI (Equated Monthly Instalment) is a pre-decided fixed amount to be paid on a specific date each month by the borrower of a loan to clear off an outstanding loan within the set-out time frame. An EMI amount includes the interest plus the principal amount accrued on the loan amount.</p>
+                
+                <ul>
+                    <li>
+                        <strong>Principal borrowed</strong> – The actual loan amount you need to hire to start or expand a business. Higher the principal loan amount higher will be the EMI payable and vice-versa.
+                    </li>
+                    <li>
+                        <strong>Rate of interest</strong> – One of the prime factors affecting the EMI amount is the rate of interest. Higher the rate of interest, higher will be the EMI payable and vice-versa.
+                    </li>
+                    <li>
+                        <strong>Tenure of the loan</strong> – Longer the loan tenure, lower will be the EMI payable. Currently, the longest loan tenure for business loans in India is five years.
+                    </li>
+                    <li>
+                        <strong>Monthly rest period</strong> – Under the monthly rest period, the interest is worked out based on the outstanding loan amount, which means with every EMI that you pay, there is a reduction in interest over time.
+                    </li>
+                    <li>
+                        <strong>Annual rest period</strong> – Under annual rest, even with the payment of regular EMIs, the interest calculated on the loan amount will be re-evaluated only at the end of each year (12 months).
+                    </li>
+                </ul>
+                
+                <h3>How does the Commercial loan EMI calculator work?</h3>
+                <p>For calculation of EMIs using <strong>Commercial loan EMI calculator</strong>, you need to know the below details of the loan:</p>
+                
+                <ul>
+                    <li>The total loan amount</li>
+                    <li>Rate of interest charged on the amount</li>
+                    <li>The loan tenure</li>
+                </ul>
+                
+                <p>The mathematical formula for calculation of Commercial loan EMI is:</p>
+                <p>E = P * R * (1+R)^N / ((1+R)^N-1), where;</p>
+                
+                <ul>
+                    <li>E is EMI (Equated Monthly Instalment)</li>
+                    <li>P is the principal loan amount borrowed</li>
+                    <li>R is the rate of interest</li>
+                    <li>N is the loan tenure in months</li>
+                </ul>
+                
+                <h4>Step by Step method of calculating EMIs using Commercial loan EMI calculator:</h4>
+                <ol>
+                    <li>Enter the loan amount for which you want to apply.</li>
+                    <li>Enter the rate of interest applicable</li>
+                    <li>Select the tenure of the loan as per your repayment convenience</li>
+                </ol>
+                
+                <p>After entering the above details, the commercial loan calculator evaluates the below figures:</p>
+                
+                <ul>
+                    <li>Total interest amount payable until the end of your loan tenure.</li>
+                    <li>The total amount owed at the end of the mandate, which is the sum of principal and interest.</li>
+                    <li>EMIs, which is the equated monthly amount to be paid towards your business loan.</li>
+                </ul>
+                
+                <h3>EMI Calculator</h3>
+                <p>The below table provides EMI calculation for a business loan amount of Rs 1lakh at an interest rate of 13.50% for different tenures:</p>
+                
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Loan Tenure</th>
+                            <th>Two years</th>
+                            <th>Three years</th>
+                            <th>Five years</th>
+                        </tr>
+                        <tr>
+                            <td>EMI payable for a loan amount of Rs. 1 lakh at 13.50% interest rate</td>
+                            <td>Rs. 4,778</td>
+                            <td>Rs. 3,394</td>
+                            <td>Rs. 2,301</td>
+                        </tr>
+                        <tr>
+                            <td>Total interest payable over the entire loan tenure</td>
+                            <td>Rs. 30,414</td>
+                            <td>Rs. 48,931</td>
+                            <td>Rs. 94,227</td>
+                        </tr>
+                        <tr>
+                            <td>Total amount payable to the bank (principal + interest)</td>
+                            <td>Rs.1.30 Lakh</td>
+                            <td>Rs.1.49 Lakh</td>
+                            <td>Rs.1.94 Lakh</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <ul>
+                    <li>As discussed above, for the longest <a href="#" style="color: #12a9c0;">business loan</a> tenure of 5 years at a 13.50% interest rate, the EMI amount is the lowest at Rs 2301, and the total interest payable comes to Rs. 94,227.</li>
+                    <li>And for the shortest loan tenure of 2 years at 13.50% interest, the EMI payable is the highest at Rs. 4,778, and the total interest payable is Rs. 30,414, less than half of what you pay for a five-year tenure.</li>
+                </ul>
+                
+                <h3>Benefits of Commercial Loan Calculator</h3>
+                <ul>
+                    <li>
+                        <strong>Saves time</strong> – Calculating EMIs with <a href="#" style="color: #12a9c0;">commercial loan</a> calculator saves time in tedious calculations as it calculates EMIs in seconds, only by entering necessary details of your loan.
+                    </li>
+                    <li>
+                        <strong>Accuracy</strong> – Manual calculations always carry the risk of errors, whereas calculating EMIs with commercial loan calculator provides accurate results.
+                    </li>
+                    <li>
+                        <strong>Financial planning</strong> – Calculating accurate EMIs can help you plan your finances based on your income and savings.
+                    </li>
+                    <li>
+                        <strong>Evaluate multiple schedules</strong> – With a commercial loan calculator. You can evaluate various amortization schedules for different combinations of loan tenures and rate of interest, thus helping you choose the EMI option that best suits your repayment potential.
+                    </li>
+                </ul>
+                
+                <p>Above all, a commercial loan calculator will help you make a well-informed decision about the monthly cash outflow towards your business loan repayment.</p>
+                
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions:</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What is a Commercial Loan EMI Calculator?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>A Commercial Loan EMI Calculator helps you calculate your monthly payments for a commercial property loan. It considers the loan amount, interest rate, and repayment period to show your exact EMI amount.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>How is commercial loan EMI calculated?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Commercial loan EMI is calculated using the standard EMI formula: EMI = P × r × (1 + r)^n / ((1 + r)^n - 1), where P is the principal amount, r is the monthly interest rate, and n is the number of monthly installments.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What factors affect my commercial loan EMI?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Your EMI is affected by the loan amount, interest rate, and repayment tenure. Higher loan amounts and interest rates increase EMI, while longer tenures reduce monthly payments but increase total interest.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>Can I prepay my commercial loan?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Yes, most lenders allow prepayment of commercial loans after a certain period (usually 6 months) with minimal or no charges. Prepayment can help reduce your total interest burden.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What happens if I miss an EMI payment?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Missing an EMI payment may result in late payment charges, affect your credit score, and impact future loan eligibility. It's important to maintain regular payments.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="right-sidebar">
+            <!-- Eligibility Form -->
+            <div class="eligibility-form">
+                <h2 class="eligibility-title">Check your eligibility</h2>
+                <p style="margin-bottom: 20px;">Get your loan eligibility checked in just a few seconds!</p>
+                
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email ID</label>
+                        <input type="email" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Do you have business registration proof?</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Monthly Sales</label>
+                        <input type="text" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">How old is your business</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="0-1">Less than 1 year</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">More than 5 years</option>
+                        </select>
+                    </div>
+
+                    <div style="background: #f8f8f8; padding: 10px; margin: 20px 0; text-align: center;">
+                        All the fields are mandatory
+                    </div>
+
+                    <button type="button" class="check-eligibility-btn">Check Eligibility</button>
+
+                    <div class="terms-text">
+                        I hereby confirm that I have read, understood and agree to the mentioned 
+                        <a href="#">T&C</a>, <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+                        and receive communication via SMS, E-mail, and Whatsapp. I hereby authorise 
+                        Lendingkart Finance Limited (LFL), its affiliate(s) and lending partners, 
+                        to view, save, download and store CKYCR records, update or report my KYC 
+                        details with the Central KYC Registry (CERSAI) and further authorise LFL 
+                        to share this information with its affiliate(s) and lending partners.
+                    </div>
+                </form>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">What Is the ZED Certification Scheme and Why It Matters for MSMEs in India</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">What Is the ISO MSME Reimbursement Scheme and How Can It Benefit Your Business?</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">What Is CGST?</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">What is P2P Lending? Everything You Need to Know About Peer-to-Peer Loans</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Pros and Cons of MSME Loans: A Balanced Guide for Small Business Owners</a>
+                    </li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+
+            <!-- Business Loan Categories -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business loan</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Apply Online Business Loans in Bangalore up to ₹50 Lakhs</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loan Eligibility</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loan Interest Rate</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loan EMI Calculator – Quick & Easy Estimation</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Instant Business Loan</a>
+                    </li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+
+            <!-- Business Loan Types -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business Loan Types</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Get a Commercial Loan for Small Business – Quick Application</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loans For Women</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">MSME Loan / SME Loan – Apply For MSME Business Loan Online</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Easy Ways to Apply for a Working Capital Loan in India</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Working Capital Loan EMI Calculator – Lendingkart</a>
+                    </li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+
+            <!-- Business Loan by Industry -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business Loan by Industry</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loan for Petrol Pump</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Get Quick Business Loans for Your Restaurant Startup</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Medical Store Loan – Get up to ₹2 Crore Financing Online</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loan for Grocery Store</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Machinery Loan for Business</a>
+                    </li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+
+            <!-- Business Loan by City -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business Loan by City</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Explore Business Loans in Bengaluru – Apply Now</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loans in Ahmedabad: Fast Approval & Online Application</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Business Loans in Delhi NCR – Lendingkart Quick Approval</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Get Business Loans in Hyderabad: Interest Rates & Eligibility</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Get Small Business Loans Online in Jaipur</a>
+                    </li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+
+            <!-- Trending Articles -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Trending Articles</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Free CIBIL Score & Report</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Free Credit Score & Report</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">CIBIL Score for Business Loan</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">Government Loan Scheme</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">59 Minutes Loan</a>
+                    </li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+
+            <!-- GST Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">GST</h3>
+            </div>
+        </div>
+    </div>
+    <div id="chatbot-fab" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="avatar"></div>
+            <span>GK BoT</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="query">
+            <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/eligibility-check.js"></script>
+    <script src="../js/c13.js"></script>
+    <script src="../js/chatbot.js" defer></script>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="/Users/gauravkulkarni/Desktop/1st-year -prj/assets/icons/Image (2).png" alt="Logo" />
+      </div>
+      <ul class="navbar-menu">
+        <li class="navbar-item dropdown">
+          <a href="#">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="A1.html">Business Loan</a></li>
+            <li><a href="A2.html">Working Capital Loan</a></li>
+            <li><a href="A3.html">SME Loan</a></li>
+            <li><a href="A4.html">Business Loan for Women</a></li>
+          </ul>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#">Partners</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Lendingkart Enterprise Solution</a></li>
+            <li><a href="#">Become a Channel Partner</a></li>
+          </ul>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#">Calculator</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-submenu">
+              <a href="#">EMI Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c11.html">Business Loan EMI Calculator-Quick & Easy Estimation</a></li>
+                <li><a href="c12.html">Working Capital Loan EMI Calculator-Lendinkart</a></li>
+                <li><a href="c13.html">Commercial Loan EMI Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Tax Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c21.html">GST Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Saving Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c31.html">FD Calculator</a></li>
+                <li><a href="c32.html">Recurring Deposit Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Loan Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c41.html">Foreclosure Calculator</a></li>
+                <li><a href="c42.html">GST Invoice Generator</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#">Resource</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Lendingkart Blog: Business</a></li>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Quick Links</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="login.html" class="navbar-btn outline">Login</a>
+        <a href="apply.html" class="navbar-btn filled">Apply Now</a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <style>
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+            flex-grow: 1;
+        }
+        
+        .toggle-icon {
+            font-size: 20px;
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const toggleIcon = this.querySelector('.toggle-icon');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.style.display = 'none';
+                            item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current answer
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                        toggleIcon.textContent = '−';
+                    } else {
+                        answer.style.display = 'none';
+                        toggleIcon.textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GST Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times:wght@400&display=swap">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/eligibility-cards.css">
+    <link rel="stylesheet" href="../css/c21.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="../js/logo-redirect.js" defer></script>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="/Users/gauravkulkarni/Desktop/1st-year -prj/assets/icons/Image (2).png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li class="navbar-item dropdown">
+                <a href="#">Products</a>
+                <ul class="dropdown-menu">
+                    <li><a href="A1.html">Business Loan</a></li>
+                    <li><a href="A2.html">Working Capital Loan</a></li>
+                    <li><a href="A3.html">SME Loan</a></li>
+                    <li><a href="A4.html">Business Loan for Women</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Partners</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Enterprise Solution</a></li>
+                    <li><a href="#">Become a Channel Partner</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Calculator</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="#">EMI Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c11.html">Business Loan EMI Calculator-Quick & Easy Estimation</a></li>
+                            <li><a href="c12.html">Working Capital Loan EMI Calculator-Lendinkart</a></li>
+                            <li><a href="c13.html">Commercial Loan EMI Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Tax Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c21.html">GST Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Saving Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c31.html">FD Calculator</a></li>
+                            <li><a href="c32.html">Recurring Deposit Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Loan Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c41.html">Foreclosure Calculator</a></li>
+                            <li><a href="c42.html">GST Invoice Generator</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Resource</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Blog: Business</a></li>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Quick Links</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <a href="login.html" class="navbar-btn outline">Login</a>
+            <a href="apply.html" class="navbar-btn filled">Apply Now</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="page-layout">
+        <div class="main-content">
+            <h1>Calculate GST Easily with Our Free Online GST Calculator</h1>
+            
+            <p>An online GST calculator is a tool designed to simplify the process of calculating Goods and Services Tax (GST) payable on various goods and services in India. By inputting the net price of a product or service and the applicable GST rate (5%, 12%, 18%, or 28%), the tool quickly computes the total amount including GST. This helps businesses and consumers instantly figure out the tax component, ensuring accuracy in financial transactions and compliance with tax regulations along with <span class="highlight">business loans</span>. Additionally, calculator GST online aids in preparing invoices and financial statements by providing clear tax breakdowns, essential for maintaining transparent and straightforward financial records.</p>
+            
+            <div class="calculator-container">
+                <div class="input-section">
+                    <div class="input-group amount-slider-group" style="position: relative; margin-bottom: 40px;">
+                        <label for="amount" style="font-size: 20px; font-weight: 600; color: #023347; margin-bottom: 10px;">Amount</label>
+                        <div style="position: relative; width: 100%;">
+                            <div class="value-box" id="amount-value-box" style="position: absolute; right: 0; top: -50px; min-width: 140px; background: #12a9c0; color: #fff; font-size: 22px; font-weight: 600; border-radius: 12px; padding: 12px 24px; text-align: center; box-shadow: 0 2px 8px rgba(18,169,192,0.15); z-index: 2;">₹1,000</div>
+                            <input type="range" id="amount" min="100" max="10000000" value="1000" step="100" style="width: 100%; margin-top: 30px;">
+                        </div>
+                        <div class="slider-labels" style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 16px; color: #666;">
+                            <span id="amount-min-label">₹100</span>
+                            <span id="amount-max-label">₹1,00,00,000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>GST Rate:</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="rate5" name="gstRate" value="5">
+                                <label for="rate5">5%</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="rate12" name="gstRate" value="12">
+                                <label for="rate12">12%</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="rate18" name="gstRate" value="18">
+                                <label for="rate18">18%</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="rate28" name="gstRate" value="28">
+                                <label for="rate28">28%</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="radio-info">
+                            <input type="radio" id="exclusive" name="gstType" checked>
+                            <label for="exclusive">GST Exclusive (Entered amount does not include GST rate)</label>
+                        </div>
+                        <div class="radio-info">
+                            <input type="radio" id="inclusive" name="gstType">
+                            <label for="inclusive">GST Inclusive (Entered amount include GST rate)</label>
+                        </div>
+                    </div>
+                    
+                    <button class="calculate-btn">Calculate</button>
+                </div>
+                
+                <div class="result-section">
+                    <div class="result-card">
+                        <div class="result-label">GST Amount</div>
+                        <div class="result-value" id="gst-amount">-</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Total Amount</div>
+                        <div class="result-value" id="total-amount">-</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>Why should you use an online GST calculator?</h2>
+            <p>Using an online GST calculator offers several advantages, especially for businesses and consumers in India dealing with Goods and Services Tax. Here are some key reasons why you should consider using an online GST calculator:</p>
+            
+            <ol>
+                <li><b>Accuracy:</b> Ensures that GST calculations are accurate, reducing the risk of errors that can occur when calculating manually, which is crucial for compliance and financial reporting.</li>
+                <li><b>Efficiency:</b> Speeds up the process of calculating GST on the sale or purchase of goods and services, saving time and effort that can be redirected towards other business activities.</li>
+                <li><b>Ease of Use:</b> Online GST calculators are user-friendly and require minimal inputs, such as the cost of goods/services and the applicable GST rate, making them accessible even to those with limited accounting or tax knowledge.</li>
+                <li><b>Cost-Effective:</b> Most online GST calculators are free to use, providing an economical solution for businesses of all sizes to manage their taxation without needing specialized accounting software or professional help.</li>
+                <li><b>Up-to-Date Information:</b> Online calculators are regularly updated to reflect any changes in GST rates or regulations, ensuring that the businesses remain compliant with the latest tax laws.</li>
+                <li><b>Educational Tool:</b> Helps individuals and businesses understand how GST impacts the pricing of goods and services, fostering better financial planning and awareness.</li>
+            </ol>
+            
+            <h2>What is GST (Goods and Services Tax)?</h2>
+            <p>GST, or Goods and Services Tax, is a comprehensive indirect tax on the manufacture, sale, and consumption of goods and services across India. It is a single, unified tax system that has replaced various indirect taxes like <span class="highlight">VAT</span>, excise duty, service tax, and more. GST was implemented on July 1, 2017, under the "One Nation, One Tax" initiative to eliminate the cascading effect of taxes, where tax is levied on an already taxed amount, leading to inflationary prices. GST is levied at every point of sale, and the applicable rates are divided into four primary slabs: 5%, 12%, 18%, and 28%, depending on the nature of goods and services. The system is designed to be digitally driven, with all tax filings and operations conducted online, enhancing transparency, compliance, and ease of doing business. This tax reform aims to unify the Indian market, boost the economy, and increase government revenues by widening the tax base.</p>
+            
+            <h2>What is the GST inclusive amount?</h2>
+            <p>The GST inclusive amount is the total price that consumers pay for a product or service, which includes the base cost plus the Goods and Services Tax (<span class="highlight">GST</span>) applied. This total reflects the actual amount to be paid at the point of sale, making it straightforward for consumers to understand the total cost, including all taxes. GST inclusive pricing is essential for transparency, allowing customers to see the exact amount they are spending, inclusive of all taxes.</p>
+            
+            <h2>What is the GST exclusive amount?</h2>
+            <p>The GST exclusive amount refers to the original price of a product or service before the addition of the Goods and Services Tax (GST). This amount is the base price that is used to calculate the applicable GST, depending on the product or service's tax slab (such as 5%, 12%, 18%, or 28%). Understanding the GST exclusive amount is crucial for businesses and tax professionals when preparing invoices, as it clearly separates the net cost of goods or services from the tax component.</p>
+            
+            <h2>What does the GST inclusive amount mean?</h2>
+            <p>The GST inclusive amount is the total cost that consumers pay for a product or service, which includes both the core price and the Goods and Services Tax (GST) added on top. This comprehensive amount shows consumers the full price they need to pay, with all taxes included, at the point of sale. Displaying prices as GST inclusive helps ensure clarity and transparency in transactions, making it easier for buyers to understand their total expenditure.</p>
+            
+            <h2>What is GSTIN?</h2>
+            <p>GSTIN, or Goods and Services Tax Identification Number, is a unique 15-digit code assigned to each taxpayer registered under the GST regime in India. This number helps identify the business entity and facilitates GST-related activities like compliance, tax returns, and invoices. The GSTIN is mandatory for all entities participating in the buying or selling of goods and services in India and is essential for claiming input tax credits.</p>
+            
+            <h2>Tax components under GST</h2>
+            <p>The GST (Goods and Services Tax) system in India consists of several key tax components designed to streamline the tax structure across the nation. Here are the primary components of GST:</p>
+            
+            <ol>
+                <li><b>CGST (Central Goods and Services Tax):</b> Levied by the Central Government on intra-state sales, where both the supplier and consumer are in the same state. The revenue collected under CGST is for the Central Government.</li>
+                <li><b>SGST (State Goods and Services Tax):</b> Charged by the state government on intra-state sales, alongside CGST. SGST revenue goes to the state where the goods or services are sold.</li>
+                <li><b>IGST (Integrated Goods and Services Tax):</b> Applied on inter-state sales and imports, where the supplier and consumer are in different states or countries. IGST ensures a seamless flow of tax credits from one state to another and is shared between the state and central governments.</li>
+                <li><b>UTGST (Union Territory Goods and Services Tax):</b> Similar to SGST but applied in Union Territories of India without a legislature. It is collected by the Union Territory government.</li>
+            </ol>
+            
+            <h2>How is GST Calculated</h2>
+            <p>GST interest calculation in India involves determining the applicable rate from the GST slabs—5%, 12%, 18%, and 28%—based on the type of goods or services being sold. Here's how it is typically calculated by using GST tax calculator:</p>
+            
+            <ol>
+                <li><b>Identify the GST Rate:</b> Each product or service is classified under a specific GST slab.</li>
+                <li><b>Compute the GST Amount:</b> Multiply the GST rate by the taxable value of the goods or services. The taxable value is the transaction value of the goods or services, excluding GST.</li>
+                <li><b>GST Inclusive Pricing:</b> To find the GST inclusive price, add the GST amount to the base price of the goods or services.</li>
+                <li><b>GST Exclusive Pricing:</b> To calculate the price excluding GST, divide the total GST inclusive amount by (1 + GST rate/100).</li>
+            </ol>
+            
+            <p>This formula helps in determining both how much tax needs to be collected and how pricing adjustments should be made for GST inclusion or exclusion. This calculation is crucial for both compliance with tax laws and proper financial planning.</p>
+            
+            <h2>The formula for GST amount</h2>
+            <p>The GST calculation formula used on the amount on any goods or services is straightforward. It involves applying the GST rate applicable to the particular goods or services being sold. Here's the basic GST calculation formula used:</p>
+            
+            <p><b>GST Amount = (Original Cost of the Goods/Services) × (GST Rate %)</b></p>
+            
+            <h2>Example for understanding the GST calculation</h2>
+            <p>For instance, if the cost of a product is ₹1,000 and the applicable GST rate is 18%, then the GST amount would be:</p>
+            
+            <p><b>GST Amount = ₹1,000 × 18% = ₹180</b></p>
+            
+            <p>This calculation gives you the amount of GST that needs to be added to the original cost to arrive at the final selling price. To find the final price that the consumer will pay (GST inclusive price), you would add the GST amount to the original cost:</p>
+            
+            <p><b>Final Price = Original Cost + GST Amount = ₹1,000 + ₹180 = ₹1,180</b></p>
+            
+            <p>This formula helps in determining the tax liability on a product or service, ensuring compliance with the tax regulations and accurate financial documentation. Enhance your business's financial health with our GST calculator, perfectly designed to assist <span class="highlight">MSME Loans</span> and <span class="highlight">Mudra loan</span> recipients in optimizing their <span class="highlight">working capital loans</span> with Lendingkart.</p>
+            
+            <section class="faq-section">
+                <h2>Frequently Asked Questions:</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What is a GST Calculator?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>A GST Calculator is a tool that helps you calculate the Goods and Services Tax (GST) amount on your transactions. It helps you determine the exact tax amount to be paid or collected based on the transaction value and applicable GST rate.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>How is GST calculated?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>GST is calculated by multiplying the taxable value of goods/services by the applicable GST rate. For example, if the rate is 18% and the value is ₹1000, GST would be ₹180 (1000 × 18%).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What are the different GST rates?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>GST rates in India are 0%, 5%, 12%, 18%, and 28%. Some items may also attract additional cess. The rate applicable depends on the type of goods or services being supplied.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What is the difference between CGST, SGST, and IGST?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>CGST (Central GST) and SGST (State GST) apply to intra-state transactions, while IGST (Integrated GST) applies to inter-state transactions. For example, in an 18% GST rate, intra-state would be 9% CGST + 9% SGST, while inter-state would be 18% IGST.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>How do I calculate reverse charge GST?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Under reverse charge, the recipient of goods/services is liable to pay GST. The calculation remains the same, but the tax is paid by the recipient instead of the supplier. Use the calculator with the reverse charge option selected.</p>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .faq-section {
+                    margin-top: 40px;
+                }
+                
+                .faq-item {
+                    margin-bottom: 15px;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 5px;
+                }
+                
+                .faq-question {
+                    padding: 15px;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    transition: background-color 0.3s;
+                }
+                
+                .faq-question:hover {
+                    background-color: #e9ecef;
+                }
+                
+                .faq-question h3 {
+                    margin: 0;
+                    font-size: 16px;
+                    color: #333;
+                    flex-grow: 1;
+                }
+                
+                .toggle-icon {
+                    font-size: 20px;
+                    color: #666;
+                    margin-right: 10px;
+                }
+                
+                .faq-answer {
+                    padding: 15px;
+                    background-color: #fff;
+                    border-top: 1px solid #e0e0e0;
+                }
+                
+                .faq-answer p {
+                    margin: 0;
+                    color: #666;
+                    line-height: 1.5;
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const faqQuestions = document.querySelectorAll('.faq-question');
+                    
+                    faqQuestions.forEach(question => {
+                        question.addEventListener('click', function() {
+                            const answer = this.nextElementSibling;
+                            const toggleIcon = this.querySelector('.toggle-icon');
+                            
+                            // Close all other answers
+                            document.querySelectorAll('.faq-answer').forEach(item => {
+                                if (item !== answer) {
+                                    item.style.display = 'none';
+                                    item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                                }
+                            });
+                            
+                            // Toggle current answer
+                            if (answer.style.display === 'none') {
+                                answer.style.display = 'block';
+                                toggleIcon.textContent = '−';
+                            } else {
+                                answer.style.display = 'none';
+                                toggleIcon.textContent = '+';
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+        <div class="right-sidebar">
+            <!-- Eligibility Form -->
+            <div class="eligibility-form">
+                <h2 class="eligibility-title">Check your eligibility</h2>
+                <p style="margin-bottom: 20px;">Get your loan eligibility checked in just a few seconds!</p>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email ID</label>
+                        <input type="email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Do you have business registration proof?</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Monthly Sales</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">How old is your business</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="0-1">Less than 1 year</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">More than 5 years</option>
+                        </select>
+                    </div>
+                    <div style="background: #f8f8f8; padding: 10px; margin: 20px 0; text-align: center;">
+                        All the fields are mandatory
+                    </div>
+                    <button type="button" class="check-eligibility-btn">Check Eligibility</button>
+                    <div class="terms-text">
+                        I hereby confirm that I have read, understood and agree to the mentioned 
+                        <a href="#">T&C</a>, <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+                        and receive communication via SMS, E-mail, and Whatsapp. I hereby authorise 
+                        Lendingkart Finance Limited (LFL), its affiliate(s) and lending partners, 
+                        to view, save, download and store CKYCR records, update or report my KYC 
+                        details with the Central KYC Registry (CERSAI) and further authorise LFL 
+                        to share this information with its affiliate(s) and lending partners.
+                    </div>
+                </form>
+            </div>
+            <!-- Sidebar Cards -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ZED Certification Scheme and Why It Matters for MSMEs in India</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ISO MSME Reimbursement Scheme and How Can It Benefit Your Business?</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is CGST?</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What is P2P Lending? Everything You Need to Know About Peer-to-Peer Loans</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Pros and Cons of MSME Loans: A Balanced Guide for Small Business Owners</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business loan</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Apply Online Business Loans in Bangalore up to ₹50 Lakhs</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Eligibility</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Interest Rate</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan EMI Calculator – Quick & Easy Estimation</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Instant Business Loan</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business Loan Types</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Get a Commercial Loan for Small Business – Quick Application</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loans For Women</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">MSME Loan / SME Loan – Apply For MSME Business Loan Online</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Easy Ways to Apply for a Working Capital Loan in India</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/eligibility-check.js"></script>
+    <script src="../js/c21.js"></script>
+
+    <!-- Chatbot -->
+    <div id="chatbot-fab" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="avatar"></div>
+            <span>GK BoT</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="query">
+            <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+    <script src="../js/chatbot.js" defer></script>
+</body>
+</html>

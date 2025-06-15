@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lendingkart Hai Toh Business Is Good!</title>
+  <style>
+    body {
+      background: #f4f8f9;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+    .center-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
+    .headline { 
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: #15303b;
+      margin-bottom: 0.7rem;
+      text-align: center;
+      transition: all 2s ease-in-out;
+    }
+    .subheadline {
+      color: #8b98a7;
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      transition: all 2s ease-in-out;
+    }
+    .rupee-icon {
+      font-size: 8rem;
+      color: #12a9c0;
+      margin-bottom: 2.5rem;
+      line-height: 1;
+      transition: all 3s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+      cursor: pointer;
+      z-index: 10;
+      position: relative;
+    }
+    .rupee-icon.enlarged {
+      transform: scale(25) translate3d(-25%, +10%, 0);
+      opacity: 0.8;
+    }
+    .apply-btn {
+      background: #0a2e3a;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      padding: 1.1rem 3.5rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      transition: all 2s ease-in-out;
+      box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+    }
+    .apply-btn:hover {
+      background: #12a9c0;
+    }
+    .rbi-note {
+      color: #15303b;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      justify-content: center;
+      transition: all 2s ease-in-out;
+    }
+    .rbi-note .check {
+      color: #1ecb6c;
+      font-size: 1.3rem;
+    }
+    @media (max-width: 600px) {
+      .headline { font-size: 1.5rem; }
+      .rupee-icon { font-size: 4.5rem; }
+      .apply-btn { font-size: 1rem; padding: 0.8rem 2rem; }
+      .rupee-icon.enlarged { transform: scale(15) translate3d(-25%, +10%, 0); }
+    }
+    .enlarged ~ * {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(100px);
+    }
+  </style>
+</head>
+<body>
+  <div class="center-block">
+    <div class="headline">Lendingkart Hai Toh Business Is Good!</div>
+    <div class="subheadline">Trusted by over 2,50,000 MSMEs across India.</div>
+    <div class="rupee-icon" id="rupeeIcon">₹</div>
+    <button class="apply-btn">Apply Now</button>
+    <div class="rbi-note"><span class="check">✔️</span> LENDINGKART FINANCE is RBI Registered NBFC</div>
+  </div>
+  <script>
+    const rupeeIcon = document.getElementById('rupeeIcon');
+    const centerBlock = document.querySelector('.center-block');
+    let animationStarted = false;
+
+    // Click/touch anywhere to trigger animation
+    centerBlock.addEventListener('click', function() {
+      if (!animationStarted) {
+        animationStarted = true;
+        rupeeIcon.classList.add('enlarged');
+        // Redirect after animation completes (3 seconds)
+        setTimeout(function() {
+          window.location.href = 'LandingPage.html';
+        }, 3000);
+      }
+    });
+    
+    // Also make rupee itself clickable
+    rupeeIcon.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent double trigger
+      if (!animationStarted) {
+        animationStarted = true;
+        this.classList.add('enlarged');
+        // Redirect after animation completes (3 seconds)
+        setTimeout(function() {
+          window.location.href = 'LandingPage.html';
+        }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>

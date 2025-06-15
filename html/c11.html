@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Loan EMI Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap">
+    <link rel="stylesheet" href="../css/navbar.css"/>
+    <link rel="stylesheet" href="../css/c11.css"/>
+    <link rel="stylesheet" href="../css/eligibility-cards.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="../js/logo-redirect.js" defer></script>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="/Users/gauravkulkarni/Desktop/1st-year -prj/assets/icons/Image (2).png" alt="Logo">
+      </div>
+      <ul class="navbar-menu">
+        <li class="navbar-item dropdown">
+          <a href="#">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="A1.html">Business Loan</a></li>
+            <li><a href="A2.html">Working Capital Loan</a></li>
+            <li><a href="A3.html">SME Loan</a></li>
+            <li><a href="A4.html">Business Loan for Women</a></li>
+          </ul>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#">Partners</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Lendingkart Enterprise Solution</a></li>
+            <li><a href="#">Become a Channel Partner</a></li>
+          </ul>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#">Calculator</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-submenu">
+              <a href="#">EMI Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c11.html">Business Loan EMI Calculator-Quick & Easy Estimation</a></li>
+                <li><a href="c12.html">Working Capital Loan EMI Calculator-Lendinkart</a></li>
+                <li><a href="c13.html">Commercial Loan EMI Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Tax Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c21.html">GST Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Saving Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c31.html">FD Calculator</a></li>
+                <li><a href="c32.html">Recurring Deposit Calculator</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="#">Loan Calculator</a>
+              <ul class="dropdown-menu">
+                <li><a href="c41.html">Foreclosure Calculator</a></li>
+                <li><a href="c42.html">GST Invoice Generator</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="navbar-item dropdown">
+          <a href="#">Resource</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Lendingkart Blog: Business</a></li>
+            <li><a href="#">Media Center</a></li>
+            <li><a href="#">Quick Links</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="navbar-right">
+        <a href="login.html" class="navbar-btn outline">Login</a>
+        <a href="apply.html" class="navbar-btn filled">Apply Now</a>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="page-layout">
+      <div class="main-content">
+        <!-- Calculator Section -->
+        <div class="calculator-container">
+          <div class="calculator-title">
+            <h1>Calculate Your Commercial Loan EMI: Rates & Monthly Payments</h1>
+          </div>
+          <form class="calculator-form">
+            <!-- Loan Amount -->
+            <div class="input-group">
+              <label>Loan Amount</label>
+              <div class="value-display">₹1,00,000</div>
+              <div class="input-range">
+                <div class="track"></div>
+                <div class="thumb"></div>
+              </div>
+              <div class="range-values">
+                <span>₹1 Lakh</span>
+                <span>₹50 Lakhs</span>
+              </div>
+              <input type="number" value="100000" min="100000" max="5000000" step="100000">
+            </div>
+            <!-- Tenure -->
+            <div class="input-group">
+              <label>Tenure (in months)</label>
+              <div class="value-display">6 Months</div>
+              <div class="input-range">
+                <div class="track"></div>
+                <div class="thumb"></div>
+              </div>
+              <div class="range-values">
+                <span>6 Months</span>
+                <span>36 Months</span>
+              </div>
+              <input type="number" value="6" min="6" max="36" step="1">
+            </div>
+            <!-- Interest Rate -->
+            <div class="input-group">
+              <label>Interest Rate (per annum)</label>
+              <div class="value-display">13.5%</div>
+              <div class="input-range">
+                <div class="track"></div>
+                <div class="thumb"></div>
+              </div>
+              <div class="range-values">
+                <span>13.5%</span>
+                <span>35%</span>
+              </div>
+              <input type="number" value="13.5" min="13.5" max="35" step="0.1">
+            </div>
+            <button type="button" class="calculate-btn">Calculate</button>
+            <!-- Results -->
+            <div class="results-container">
+              <div class="chart-container">
+                <!-- Chart will go here -->
+                <div style="width: 100%; height: 100%; background: #f5f5f5; display: flex; justify-content: center; align-items: center;">[Chart Placeholder]</div>
+              </div>
+              <div class="results-summary">
+                <div class="result-item">
+                  <div class="result-label">Principal Amount</div>
+                  <div class="result-value principal-amount">Rs.1,00,000</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-label">Interest Amount</div>
+                  <div class="result-value interest-amount">Rs.3,974</div>
+                </div>
+                <div class="result-item">
+                  <div class="result-label">Monthly EMI</div>
+                  <div class="result-value">Rs.17,329</div>
+                </div>
+              </div>
+            </div>
+            <div class="total-payable">
+              Total Amount Payable: Rs.1,03,974
+            </div>
+          </form>
+        </div>
+        
+        <!-- Content Sections -->
+        <div class="content-section">
+            <h2 class="section-title">How is Business Loan EMI Calculated?</h2>
+            <p class="paragraph">Business Loan EMI is calculated using the formula:</p>
+            
+            <div class="formula-box">
+                E = P x r x (1+r)n / (1+r) n-1
+            </div>
+            
+            <p class="paragraph">Here, E = EMI amount</p>
+            <p class="paragraph">P = Principal amount</p>
+            <p class="paragraph">r = Rate of interest at which you will be borrowing the loan</p>
+            <p class="paragraph">n = tenure of the loan over which you will be repaying the loan.</p>
+            
+            <p class="paragraph">This formula when used by a business loan calculator EMI helps in determining the fixed monthly payments that will be made to clear the loan over the stipulated period.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">How to Calculate Interest on Business Loan?</h2>
+            <p class="paragraph"><span class="highlight">Interest to avail business loan</span> is determined by the principal amount, the rate of interest, and the loan's tenure.</p>
+            <p class="paragraph">The interest component is higher during the initial months of the loan tenure and gradually decreases with each payment. This is due to the amortization schedule, where earlier payments are predominantly towards interest, and later payments are towards principal repayment. The total interest to be paid over the entire loan period can significantly affect your financial planning. By understanding the interest calculation, businesses can strategize on prepayments or choosing the correct tenure to minimize the total interest paid.</p>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Benefits of Business Loan Calculator</h2>
+            <ul class="list">
+                <li><b>Saves Time:</b> Quickly calculates your EMI, avoiding manual calculations.</li>
+                <li><b>Aids in Financial Planning:</b> Helps in understanding your monthly financial obligation towards loan repayment.</li>
+                <li><b>Visual Representation:</b> Offers graphs and charts for better understanding.</li>
+                <li><b>Flexibility:</b> Allows you to experiment with different loan amounts, tenures, and <span class="highlight">business loan interest rates</span> to find the most suitable option.</li>
+                <li><b>Decision Making:</b> Assists in making an informed decision about the loan amount and tenure based on your repayment capacity.</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Factors Affecting EMI:</h2>
+            <ol class="numbered-list">
+                <li><b>Interest Rate:</b> The interest rate is a crucial factor influencing your EMI. It comprises two components: the principal amount and accrued interest. Explore different interest rates offered by banks and financial institutions. Lower interest rates result in more manageable EMIs, while higher rates lead to increased payments.</li>
+                <li><b>Loan Tenure:</b> The duration over which you repay the principal loan amount affects your EMI. Longer tenures spread out principal repayments, leading to lower monthly payments. However, extending the tenure also means accumulating more interest over time. Use loan interest calculators to experiment with tenure and interest rate combinations.</li>
+                <li><b>Loan Amount:</b> The principal loan amount significantly impacts EMI calculations. Higher loan amounts result in higher EMIs, while lower amounts lead to more affordable payments. Adjusting the loan amount may not always be feasible for business needs.</li>
+            </ol>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">How to Lower Your EMI:</h2>
+            <ol class="numbered-list">
+                <li><b>Interest Rate Adjustment:</b> Research and compare interest rates offered by different institutions. Choose the most favorable rate to reduce your EMI. Lower interest rates translate to more manageable monthly payments.</li>
+                <li><b>Optimize Loan Tenure:</b> Evaluate different loan tenure options. Longer tenures reduce monthly principal repayments but increase overall interest payments. Experiment with tenure and interest rate combinations using loan interest calculators.</li>
+                <li><b>Consider Loan Amount:</b> Assess your business needs and financial capabilities. While adjusting the loan amount may not always be feasible, consider it if possible. Utilize online loan interest calculators to determine the most comfortable EMI amount.</li>
+            </ol>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Business Loans Are Of The Following Types</h2>
+            <ul class="list">
+                <li><b>Term Loans:</b> Fixed amount loans with a scheduled repayment timeline.</li>
+                <li><b>Overdraft Facility:</b> Allows businesses to overdraw their current accounts up to an agreed limit.</li>
+                <li><b>Invoice Financing:</b> Loans offered against unpaid invoices.</li>
+                <li><b>Equipment Financing:</b> Loans specifically for purchasing business equipment.</li>
+                <li><b>Merchant Cash Advance:</b> An advance paid against future credit card sales.</li>
+            </ul>
+            
+            <a href="#" class="apply-btn">Apply for Business Loan Now</a>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Steps to Apply For a Business Loan</h2>
+            <ul class="list">
+                <li><b>Research:</b> Investigate various lenders to find the best terms and interest rates and use the business loan interest rate calculator to determine the interest rate.</li>
+                <li><b>Check Eligibility:</b> Use online tools to check if you meet the lender's <span class="highlight">business loan eligibility requirements</span>.</li>
+                <li><b>Gather Documents:</b> Prepare necessary documents such as business plans, financial statements, and proof of business ownership.</li>
+                <li><b>Apply:</b> Submit your application online or in person, including all required documentation.</li>
+                <li><b>Loan Offer:</b> Review the loan offer from the lender once your application is processed.</li>
+                <li><b>Agreement:</b> Sign the loan agreement and complete any final verification steps.</li>
+                <li><b>Disbursement:</b> Receive the loan amount in your business account and start using the funds as needed.</li>
+            </ul>
+        </div>
+        
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions:</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>What is a Business Loan EMI Calculator?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>A Business Loan EMI Calculator is a tool that helps you calculate your monthly loan payments (EMI) based on the loan amount, interest rate, and tenure. It helps you plan your finances better by showing the exact amount you need to pay each month.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>How is EMI calculated?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>EMI is calculated using the formula: EMI = P × r × (1 + r)^n / ((1 + r)^n - 1), where P is the principal amount, r is the monthly interest rate, and n is the number of monthly installments. Our calculator uses this formula to give you accurate results.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>What factors affect my EMI amount?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Your EMI amount is affected by three main factors: the loan amount (higher amount means higher EMI), interest rate (lower rate means lower EMI), and loan tenure (longer tenure means lower EMI but higher total interest).</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>Can I change my EMI amount?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Yes, you can adjust your EMI amount by changing the loan amount, tenure, or opting for a different interest rate. Use the calculator to find the combination that best suits your monthly budget.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>What is the difference between reducing and flat interest rates?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>In reducing rate, interest is calculated on the remaining principal amount, while in flat rate, interest is calculated on the entire loan amount throughout the tenure. Reducing rate results in lower total interest payments.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>How accurate is the EMI calculator?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Our EMI calculator provides accurate estimates based on the information you input. However, the actual EMI may vary slightly due to processing fees, insurance charges, or other applicable charges.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>Can I prepay my loan?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Yes, you can prepay your loan. Most lenders allow prepayment after a certain period (usually 6 months) with minimal or no charges. Prepayment can help you save on interest costs.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span class="toggle-icon">+</span>
+                    <h3>What happens if I miss an EMI payment?</h3>
+                </div>
+                <div class="faq-answer" style="display: none;">
+                    <p>Missing an EMI payment may result in late payment charges, affect your credit score, and impact future loan eligibility. It's important to maintain a good repayment history.</p>
+                </div>
+            </div>
+        </section>
+      </div>
+      <div class="right-sidebar">
+        <!-- Eligibility Form -->
+        <div class="eligibility-form">
+          <h2 class="eligibility-title">Check your eligibility</h2>
+          <p style="margin-bottom: 20px;">Get your loan eligibility checked in just a few seconds!</p>
+          <form>
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input">
+              <div class="form-note">(as per PAN)</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input">
+              <div class="form-note">(as per PAN)</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email ID</label>
+              <input type="email" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mobile Number</label>
+              <input type="tel" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Do you have business registration proof?</label>
+              <select class="form-input">
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Monthly Sales</label>
+              <input type="text" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">How old is your business</label>
+              <select class="form-input">
+                <option value="">Select</option>
+                <option value="0-1">Less than 1 year</option>
+                <option value="1-3">1-3 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5+">More than 5 years</option>
+              </select>
+            </div>
+            <div style="background: #f8f8f8; padding: 10px; margin: 20px 0; text-align: center;">
+              All the fields are mandatory
+            </div>
+            <button type="button" class="check-eligibility-btn">Check Eligibility</button>
+            <div class="terms-text">
+              I hereby confirm that I have read, understood and agree to the mentioned 
+              <a href="#">T&C</a>, <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+              and receive communication via SMS, E-mail, and Whatsapp. I hereby authorise 
+              Lendingkart Finance Limited (LFL), its affiliate(s) and lending partners, 
+              to view, save, download and store CKYCR records, update or report my KYC 
+              details with the Central KYC Registry (CERSAI) and further authorise LFL 
+              to share this information with its affiliate(s) and lending partners.
+            </div>
+          </form>
+        </div>
+        <!-- Sidebar Cards (Recent Posts, Business Loan, Business Loan Types) -->
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Recent Posts</h3>
+          <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ZED Certification Scheme and Why It Matters for MSMEs in India</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ISO MSME Reimbursement Scheme and How Can It Benefit Your Business?</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">What Is CGST?</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">What is P2P Lending? Everything You Need to Know About Peer-to-Peer Loans</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Pros and Cons of MSME Loans: A Balanced Guide for Small Business Owners</a></li>
+          </ul>
+          <a href="#" class="view-more">view more</a>
+        </div>
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Business loan</h3>
+          <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Apply Online Business Loans in Bangalore up to ₹50 Lakhs</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Eligibility</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Interest Rate</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan EMI Calculator – Quick & Easy Estimation</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Instant Business Loan</a></li>
+          </ul>
+          <a href="#" class="view-more">view more</a>
+        </div>
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">Business Loan Types</h3>
+          <ul class="sidebar-list">
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Get a Commercial Loan for Small Business – Quick Application</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loans For Women</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">MSME Loan / SME Loan – Apply For MSME Business Loan Online</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link">Easy Ways to Apply for a Working Capital Loan in India</a></li>
+          </ul>
+          <a href="#" class="view-more">view more</a>
+        </div>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/eligibility-check.js"></script>
+    <script src="../js/c11.js"></script>
+    <script src="../js/chatbot.js" defer></script>
+    <div id="chatbot-fab" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="avatar"></div>
+            <span>GK BoT</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="query">
+            <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+    <style>
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+            flex-grow: 1;
+        }
+        
+        .toggle-icon {
+            font-size: 20px;
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const toggleIcon = this.querySelector('.toggle-icon');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.style.display = 'none';
+                            item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current answer
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                        toggleIcon.textContent = '−';
+                    } else {
+                        answer.style.display = 'none';
+                        toggleIcon.textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

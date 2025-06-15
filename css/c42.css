@@ -1,0 +1,284 @@
+/* c42.css: Styles for Invoice Generator page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.invoice-header {
+    background-color: #f4f4f5;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.invoice-header h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.15px;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.upload-section p {
+    font-size: 12px;
+    color: #757575;
+}
+
+.invoice-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.detail-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.detail-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.billing-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.billing-box {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.billing-box h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.address-field {
+    margin-bottom: 10px;
+}
+
+.address-field label {
+    display: block;
+    font-size: 12px;
+    color: #757575;
+    margin-bottom: 5px;
+}
+
+.address-field input,
+.address-field textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.address-field textarea {
+    height: 60px;
+    resize: vertical;
+}
+
+.shipping-address {
+    margin-bottom: 20px;
+}
+
+.shipping-address h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.items-table th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f4f4f5;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.items-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.items-table input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-item-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #294e9b;
+    font-weight: 600;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.add-item-btn span {
+    background-color: #294e9b;
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.bank-details {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.bank-details h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.amount-summary {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-row.total {
+    font-weight: 600;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.download-btn {
+    background-color: #12a9c0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+.info-section {
+    margin-top: 40px;
+}
+
+.info-section h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+}
+
+.info-section ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.info-section li {
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .billing-box {
+        min-width: 100%;
+    }
+    .invoice-details {
+        flex-direction: column;
+    }
+}
+
+.page-layout {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.main-content {
+    flex: 1;
+}
+.right-sidebar {
+    width: 350px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+} 

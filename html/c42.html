@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/eligibility-cards.css">
+    <link rel="stylesheet" href="../css/c42.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="../js/logo-redirect.js" defer></script>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="/Users/gauravkulkarni/Desktop/1st-year -prj/assets/icons/Image (2).png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li class="navbar-item dropdown">
+                <a href="#">Products</a>
+                <ul class="dropdown-menu">
+                    <li><a href="A1.html">Business Loan</a></li>
+                    <li><a href="A2.html">Working Capital Loan</a></li>
+                    <li><a href="A3.html">SME Loan</a></li>
+                    <li><a href="A4.html">Business Loan for Women</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Partners</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Enterprise Solution</a></li>
+                    <li><a href="#">Become a Channel Partner</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Calculator</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="#">EMI Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c11.html">Business Loan EMI Calculator-Quick & Easy Estimation</a></li>
+                            <li><a href="c12.html">Working Capital Loan EMI Calculator-Lendinkart</a></li>
+                            <li><a href="c13.html">Commercial Loan EMI Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Tax Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c21.html">GST Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Saving Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c31.html">FD Calculator</a></li>
+                            <li><a href="c32.html">Recurring Deposit Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Loan Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c41.html">Foreclosure Calculator</a></li>
+                            <li><a href="c42.html">GST Invoice Generator</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Resource</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Blog: Business</a></li>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Quick Links</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <a href="login.html" class="navbar-btn outline">Login</a>
+            <a href="apply.html" class="navbar-btn filled">Apply Now</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="page-layout">
+        <div class="main-content">
+            <div class="container">
+                <!-- Invoice Form Section -->
+                <div class="invoice-header">
+                    <h1>Generate Your Invoice Now</h1>
+                </div>
+                
+                <div class="upload-section">
+                    <div style="display: flex; align-items: center; justify-content: center; width: 80px; height: 80px; background: #f1f1f1; border-radius: 50%; margin-bottom: 10px; font-size: 40px; color: #12a9c0;">
+                        <!-- Simple icon placeholder -->
+                        <span role="img" aria-label="logo">📄</span>
+                    </div>
+                    <p>Upload png or jpeg format file less than 1MB in size.</p>
+                </div>
+                
+                <div class="invoice-details">
+                    <div class="detail-group">
+                        <label for="invoice-number">Invoice#</label>
+                        <input type="text" id="invoice-number" value="0001">
+                    </div>
+                    <div class="detail-group">
+                        <label for="invoice-date">Invoice Date</label>
+                        <input type="date" id="invoice-date">
+                    </div>
+                    <div class="detail-group">
+                        <label for="due-date">Due Date</label>
+                        <input type="date" id="due-date">
+                    </div>
+                </div>
+                
+                <div class="billing-section">
+                    <div class="billing-box">
+                        <h2>Billed By</h2>
+                        <div class="address-field">
+                            <label>Your Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="address-field">
+                            <label>Company Address</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="address-field">
+                            <label>Pincode</label>
+                            <input type="text">
+                        </div>
+                        <div class="address-field">
+                            <label>Phone No.</label>
+                            <input type="text">
+                        </div>
+                        <div class="address-field">
+                            <label>GSTIN (Optional)</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    
+                    <div class="billing-box">
+                        <h2>Billed To</h2>
+                        <div class="address-field">
+                            <label>Your Name</label>
+                            <input type="text">
+                        </div>
+                        <div class="address-field">
+                            <label>Company Address</label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="address-field">
+                            <label>Pincode</label>
+                            <input type="text">
+                        </div>
+                        <div class="address-field">
+                            <label>Phone No.</label>
+                            <input type="text">
+                        </div>
+                        <div class="address-field">
+                            <label>GSTIN (Optional)</label>
+                            <input type="text">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="shipping-address">
+                    <h3>Is Shipping Address Similar to Billing address?</h3>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="shipping" id="yes" checked>
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="shipping" id="no">
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <table class="items-table">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Qty<br><span>in units</span></th>
+                            <th>Rate<br><span>in ₹</span></th>
+                            <th>Disc<br><span>in %</span></th>
+                            <th>IGST<br><span>in %</span></th>
+                            <th>CGST<br><span>in %</span></th>
+                            <th>SGST<br><span>in %</span></th>
+                            <th>CESS<br><span>in %</span></th>
+                            <th>Amount<br><span>Qty. x Rate</span></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" placeholder="Item Name"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td>₹0.00</td>
+                            <td><button>×</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="add-item-btn">
+                    <span>+</span>
+                    <span>Add New Item</span>
+                </div>
+                
+                <table class="items-table">
+                    <tbody>
+                        <tr>
+                            <td><input type="text" value="Shipping Cost"></td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="bank-details">
+                    <h2>Bank Details</h2>
+                    <div class="address-field">
+                        <label>Account No.</label>
+                        <input type="text">
+                    </div>
+                    <div class="address-field">
+                        <label>IFSC</label>
+                        <input type="text">
+                    </div>
+                    <div class="address-field">
+                        <label>Account Holder Name (Optional)</label>
+                        <input type="text">
+                    </div>
+                    <div class="address-field">
+                        <label>Add Terms and Conditions</label>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                
+                <div class="amount-summary">
+                    <div class="summary-row">
+                        <span>AMOUNT</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Discount</span>
+                        <span>- ₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping Charges</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>TAXABLE AMOUNT</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>IGST</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>CGST</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>SGST</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Cess</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>TOTAL AMOUNT</span>
+                        <span>₹ 0.00</span>
+                    </div>
+                </div>
+                
+                <button class="download-btn">Download PDF</button>
+                
+                <!-- Information Section -->
+                <div class="info-section">
+                    <h2>What is an Invoice?</h2>
+                    <p>Invoice usually terms as a bill or a tab. It is a document used for commercial purposes given by the seller to the buyer for any transaction done on the sale of goods, services, products, or any quantity on the agreed prices between both the parties. It also mentioned the due date and any applicable discounts, including taxes that are to be levied on that purchase.</p>
+                    
+                    <h2>What is an Online Invoice?</h2>
+                    <p>These days, invoices and bills are transmitted electronically through the internet, which can be printed and filed to maintain a record. Standards and details of these invoices vary from country to country. AN online Invoice is different from a receipt with common details like product sold, price of contents, nature of products, calculated tax, but invoice is generated as a bill of money that the purchaser owes to the company. In contrast, a receipt is an acknowledgment of the payment done by the buyer towards the invoice.</p>
+                    
+                    <h2>Features of an Online Invoice:</h2>
+                    <p>The following particulars are mandatory to be placed on an invoice, and many online applications are available like ours to create an online invoice for a specific brand or company:</p>
+                    
+                    <h3>Company Details:</h3>
+                    <p>The Online Invoice should have the following details of the company (seller)</p>
+                    <ul>
+                        <li>Name of Company</li>
+                        <li>Company's GSTIN</li>
+                        <li>Full address of the company</li>
+                        <li>City/State and Pin code</li>
+                        <li>Country</li>
+                    </ul>
+                    
+                    <h3>Bill to (Purchases) Details:</h3>
+                    <p>This section gives information about the purchaser and his details:</p>
+                    <ul>
+                        <li>Client Company's Name</li>
+                        <li>Client's GSTIN</li>
+                        <li>Full address of the client</li>
+                        <li>City, State, and Pin Code</li>
+                        <li>Place of supply (name of state)</li>
+                        <li>Country</li>
+                        <li>Important Information like:</li>
+                        <li>Invoice Number</li>
+                        <li>Date of Invoice</li>
+                        <li>Due Date</li>
+                    </ul>
+                    
+                    <h3>Item description:</h3>
+                    <p>This section gives details of the items that have been sold and the rate of relevant sections like:</p>
+                    <p>And going forward several rows can be added depending on the number of items/products sold</p>
+                    <p>An additional column will be added in the end stating the following:</p>
+                    
+                    <h3>Specific Notes or Mandatory Information:</h3>
+                    <p>A one-liner/ slogan may be added for example:</p>
+                    <p><strong>"Thanks for doing business with us."</strong></p>
+                    <p>Or any other management related quote or slogan.</p>
+                    
+                    <h3>Terms and Conditions:</h3>
+                    <p>In this section, the issuing company (seller) can add the relevant terms and conditions of his company like:</p>
+                    <ul>
+                        <li>Payment to be made by the due date</li>
+                        <li>Possible Legal intricacies</li>
+                        <li>Essentials of the Invoice</li>
+                        <li>Payments terms</li>
+                        <li>Highlight guarantees and warranties</li>
+                        <li>Online Payment details</li>
+                        <li>Late Payment charges</li>
+                    </ul>
+                    <p>And other conditions that the seller would like to add on his invoice.</p>
+                    
+                    <h3>Logo and Stamp of Company:</h3>
+                    <p>For an added ethnicity to the invoice, a stipulated logo or a digital signature of the company head must be added at the end of the invoice. It helps to avoid forgeries and duplicities and helps to maintain proper documentation in the accounts department.</p>
+                    
+                    <h3>Benefits of an Online Invoice:</h3>
+                    <p><strong>Easy and hassle-free documentation:</strong></p>
+                    <p>Now creating and issuing an invoice is just a click away. The entire process is quite user friendly for newbies as well; it saves a lot on time, effort, and cost.</p>
+                    
+                    <p><strong>Sending of invoices to far-off and overseas clients:</strong></p>
+                    <p>It has been quite a trouble and expensive to make paper bills and send it to clients living far off. Maintenance and postal charges have always been painful, but now using technology and multiple online options, you can simply send a soft copy of the invoice to anyone anywhere.</p>
+                    
+                    <p><strong>Reduced paperwork:</strong></p>
+                    <p>Keeping sustainability and being environmentally friendly in mind, this is the best way to conserve and protect our tree by saving on paper and the tormenting documentation process, instead just keeping an online back up of files that can easily be accessed anytime.</p>
+                    
+                    <p><strong>Saves money:</strong></p>
+                    <p>To apply for online invoicing is an onetime charge. The benefit can be availed for years to come, updating and upgrading the technology time and again, whereas paperwork for the same is quite an expensive job taking postal charges, storage, and filing into consideration.</p>
+                    
+                    <p><strong>Enhances the capability of tracking and monitoring:</strong></p>
+                    <p>It is easy to track the invoice and look after pending dues or payments by just referring to online files and stored data. It eliminates the hurdles of going through umpteen files of paper, and everything can be backed up using various methods of technology.</p>
+                    
+                    <p><strong>Lower risk:</strong></p>
+                    <p>This practice lowers the risk of bad debts due to multiple reminders that can be set online, lowers the cost due to its easy and proper maintenance, and lowers the risk of lost information due to disadvantages of paper invoices.</p>
+                    
+                    <p><strong>Mobile accessibility:</strong></p>
+                    <p>An online invoice can be sent anywhere, given to anybody. It can be customized auto-filled and personalized as per the choice of the seller and the buyer.</p>
+                    
+                    <p><strong>Professional approach:</strong></p>
+                    <p>Its usage is more approachable, authentic and professional as compared to a paper bill</p>
+                    
+                    <p><strong>Quick reporting:</strong></p>
+                    <p>It is a time-saving exercise and just a click away.</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <!-- Eligibility Form -->
+            <div class="eligibility-form">
+                <h2 class="eligibility-title">Check your eligibility</h2>
+                <p style="margin-bottom: 20px;">Get your loan eligibility checked in just a few seconds!</p>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email ID</label>
+                        <input type="email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Do you have business registration proof?</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Monthly Sales</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">How old is your business</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="0-1">Less than 1 year</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">More than 5 years</option>
+                        </select>
+                    </div>
+                    <div style="background: #f8f8f8; padding: 10px; margin: 20px 0; text-align: center;">
+                        All the fields are mandatory
+                    </div>
+                    <button type="button" class="check-eligibility-btn">Check Eligibility</button>
+                    <div class="terms-text">
+                        I hereby confirm that I have read, understood and agree to the mentioned 
+                        <a href="#">T&C</a>, <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+                        and receive communication via SMS, E-mail, and Whatsapp. I hereby authorise 
+                        Lendingkart Finance Limited (LFL), its affiliate(s) and lending partners, 
+                        to view, save, download and store CKYCR records, update or report my KYC 
+                        details with the Central KYC Registry (CERSAI) and further authorise LFL 
+                        to share this information with its affiliate(s) and lending partners.
+                    </div>
+                </form>
+            </div>
+            <!-- Sidebar Section -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business Loan Types</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Get a Commercial Loan for Small Business – Quick Application</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loans For Women</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">MSME Loan / SME Loan – Apply For MSME Business Loan Online</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Easy Ways to Apply for a Working Capital Loan in India</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+            <section class="faq-section">
+                <h2>Frequently Asked Questions:</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What is a GST Invoice Generator?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>A GST Invoice Generator is a tool that helps you create professional GST-compliant invoices. It automatically calculates GST amounts and generates invoices with all required details as per GST regulations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What information is required for a GST invoice?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Required information includes business details (name, address, GSTIN), customer details, invoice number, date, item details, HSN/SAC codes, taxable value, GST rates, and total amount. The generator helps you include all mandatory fields.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>How is GST amount calculated?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>GST amount is calculated by multiplying the taxable value by the applicable GST rate. The generator automatically calculates CGST, SGST, or IGST based on whether the transaction is intra-state or inter-state.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>Can I customize the invoice format?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>Yes, you can customize the invoice format by adding your logo, changing colors, and modifying the layout while ensuring all mandatory GST fields are included. The generator maintains compliance while allowing customization.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>How can I save and share the generated invoice?</h3>
+                    </div>
+                    <div class="faq-answer" style="display: none;">
+                        <p>You can save the generated invoice as a PDF file and share it via email or download it for printing. The generator ensures the invoice is properly formatted and includes all necessary details for record-keeping.</p>
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .faq-section {
+                    margin-top: 40px;
+                }
+                
+                .faq-item {
+                    margin-bottom: 15px;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 5px;
+                }
+                
+                .faq-question {
+                    padding: 15px;
+                    background-color: #f8f9fa;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    transition: background-color 0.3s;
+                }
+                
+                .faq-question:hover {
+                    background-color: #e9ecef;
+                }
+                
+                .faq-question h3 {
+                    margin: 0;
+                    font-size: 16px;
+                    color: #333;
+                    flex-grow: 1;
+                }
+                
+                .toggle-icon {
+                    font-size: 20px;
+                    color: #666;
+                    margin-right: 10px;
+                }
+                
+                .faq-answer {
+                    padding: 15px;
+                    background-color: #fff;
+                    border-top: 1px solid #e0e0e0;
+                }
+                
+                .faq-answer p {
+                    margin: 0;
+                    color: #666;
+                    line-height: 1.5;
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const faqQuestions = document.querySelectorAll('.faq-question');
+                    
+                    faqQuestions.forEach(question => {
+                        question.addEventListener('click', function() {
+                            const answer = this.nextElementSibling;
+                            const toggleIcon = this.querySelector('.toggle-icon');
+                            
+                            // Close all other answers
+                            document.querySelectorAll('.faq-answer').forEach(item => {
+                                if (item !== answer) {
+                                    item.style.display = 'none';
+                                    item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                                }
+                            });
+                            
+                            // Toggle current answer
+                            if (answer.style.display === 'none') {
+                                answer.style.display = 'block';
+                                toggleIcon.textContent = '−';
+                            } else {
+                                answer.style.display = 'none';
+                                toggleIcon.textContent = '+';
+                            }
+                        });
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/eligibility-check.js"></script>
+    <script src="../js/c42.js"></script>
+    <div id="chatbot-fab" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="avatar"></div>
+            <span>GK BoT</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="query">
+            <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+    <script src="../js/chatbot.js" defer></script>
+</body>
+</html>

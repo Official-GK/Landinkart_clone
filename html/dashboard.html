@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LendingKart Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/chatbot.css">
+</head>
+<body>
+  <!-- Main Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <a href="dashboard.html">
+        <img src="/Users/gauravkulkarni/Desktop/1st-year -prj/assets/icons/Image (2).png" alt="Website Logo" />
+      </a>
+    </div>
+    <div class="navbar-center">
+      <div class="search-container">
+        <input type="text" placeholder="Search loans, documents, or help..." class="search-input">
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <div class="navbar-icons">
+        <a href="#notifications" class="icon-btn">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </a>
+        <a href="#messages" class="icon-btn">
+          <i class="fas fa-envelope"></i>
+          <span class="notification-badge">2</span>
+        </a>
+        <a href="#help" class="icon-btn">
+          <i class="fas fa-question-circle"></i>
+        </a>
+      </div>
+      <!-- Profile section - shown when logged in -->
+      <div class="profile-section">
+        <div class="profile-icon">
+          <img src="../assets/images/profile-icon.png" alt="Profile" />
+        </div>
+        <div class="profile-dropdown">
+          <div class="profile-header">
+            <img src="../assets/images/profile-icon.png" alt="Profile" class="profile-image" />
+            <div class="profile-info">
+              <h4>John Doe</h4>
+              <p>john.doe@example.com</p>
+            </div>
+          </div>
+          <ul class="profile-menu">
+            <li><a href="dashboard.html"><i class="fas fa-user"></i> My Profile</a></li>
+            <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+            <li class="divider"></li>
+            <li><a href="landingpage.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="navbar-gap"></div>
+
+  <!-- Dashboard Navigation -->
+  <nav class="nav">
+    <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+    <button class="nav-btn" data-tab="applications">Applications</button>
+    <button class="nav-btn" data-tab="documents">Documents</button>
+    <button class="nav-btn" data-tab="payments">Payments</button>
+    <button class="nav-btn" data-tab="history">Payment History</button>
+    <button class="nav-btn" data-tab="analytics">Analytics</button>
+    <button class="nav-btn" data-tab="support">Support</button>
+  </nav>
+  <!-- Main Content -->
+  <main>
+    <section id="dashboard" class="tab-section active">
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">Welcome, John Doe 👋</h1>
+        <p class="dashboard-subtitle">Here's a quick overview of your lending journey.</p>
+      </div>
+      <div class="dashboard-stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Loans</div>
+          <div class="stat-value">3</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Active Loans</div>
+          <div class="stat-value">2</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Outstanding Amount</div>
+          <div class="stat-value">₹2,31,472</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Next EMI Due</div>
+          <div class="stat-value">15 Feb 2024</div>
+        </div>
+      </div>
+      <div class="dashboard-loan-overview card">
+        <div class="loan-overview-header">Active Loans</div>
+        <div class="loan-list">
+          <div class="loan-item">
+            <div>
+              <div class="loan-id">Loan #A1B2C3</div>
+              <div class="loan-amount">₹1,50,000</div>
+            </div>
+            <div>
+              <div class="loan-status active">Active</div>
+              <div class="loan-next-emi">Next EMI: 15 Feb 2024</div>
+            </div>
+            <div class="loan-progress-bar-bg">
+              <div class="loan-progress-bar-fill" style="width: 60%"></div>
+            </div>
+          </div>
+          <div class="loan-item">
+            <div>
+              <div class="loan-id">Loan #D4E5F6</div>
+              <div class="loan-amount">₹81,472</div>
+            </div>
+            <div>
+              <div class="loan-status active">Active</div>
+              <div class="loan-next-emi">Next EMI: 15 Mar 2024</div>
+            </div>
+            <div class="loan-progress-bar-bg">
+              <div class="loan-progress-bar-fill" style="width: 35%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dashboard-recent-activity card">
+        <div class="recent-activity-header">Recent Activity</div>
+        <ul class="recent-activity-list">
+          <li><span class="icon">💸</span> EMI Payment of ₹44,632 made on 15 Jan 2024</li>
+          <li><span class="icon">📄</span> PAN Card uploaded</li>
+          <li><span class="icon">✅</span> Loan #A1B2C3 approved</li>
+        </ul>
+      </div>
+      <div class="dashboard-quick-actions">
+        <button class="quick-action-btn">+ Apply for New Loan</button>
+        <button class="quick-action-btn">Download Statement</button>
+        <button class="quick-action-btn">Contact Support</button>
+      </div>
+    </section>
+    <section id="applications" class="tab-section">
+      <div class="applications-header">
+        <h1 class="applications-title">Loan Applications</h1>
+        <button class="new-application-btn">+ New Application</button>
+      </div>
+      <div class="applications-list">
+        <div class="application-card">
+          <div class="application-card-header">
+            <div class="application-id">Application #A1B2C3D4</div>
+            <span class="application-status status-submitted">Submitted</span>
+          </div>
+          <div class="application-meta">
+            <span>Amount: ₹200,000</span>
+            <span>Applied: 2024-05-01</span>
+            <span>Last Updated: 2024-05-02</span>
+          </div>
+          <div class="application-progress">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width:20%"></div>
+            </div>
+            <div class="progress-steps">
+              <span class="step step-completed">Submitted</span>
+              <span class="step">Verification</span>
+              <span class="step">Approval</span>
+              <span class="step">Disbursement</span>
+            </div>
+          </div>
+          <div class="application-details-row">
+            <div><span class="application-label">Business Name:</span> PJ International</div>
+            <div><span class="application-label">Purpose:</span> Working Capital</div>
+            <div><span class="application-label">Documents:</span> 2 uploaded</div>
+          </div>
+          <div class="application-actions-row">
+            <div></div>
+            <div class="application-actions">
+              <button class="view-details-btn">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="application-card">
+          <div class="application-card-header">
+            <div class="application-id">Application #E5F6G7H8</div>
+            <span class="application-status status-verification">Under Verification</span>
+          </div>
+          <div class="application-meta">
+            <span>Amount: ₹350,000</span>
+            <span>Applied: 2024-04-15</span>
+            <span>Last Updated: 2024-04-18</span>
+          </div>
+          <div class="application-progress">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width:50%"></div>
+            </div>
+            <div class="progress-steps">
+              <span class="step step-completed">Submitted</span>
+              <span class="step step-current">Verification</span>
+              <span class="step">Approval</span>
+              <span class="step">Disbursement</span>
+            </div>
+          </div>
+          <div class="application-details-row">
+            <div><span class="application-label">Business Name:</span> ABC Traders</div>
+            <div><span class="application-label">Purpose:</span> Equipment Purchase</div>
+            <div><span class="application-label">Documents:</span> 3 uploaded</div>
+          </div>
+          <div class="application-actions-row">
+            <div class="application-status-msg status-msg-verification">🕒 Documents under review (2-3 business days)</div>
+            <div class="application-actions">
+              <button class="view-details-btn">View Details</button>
+            </div>
+          </div>
+        </div>
+        <div class="application-card">
+          <div class="application-card-header">
+            <div class="application-id">Application #I9J0K1L2</div>
+            <span class="application-status status-approved">Approved</span>
+          </div>
+          <div class="application-meta">
+            <span>Amount: ₹150,000</span>
+            <span>Applied: 2024-03-10</span>
+            <span>Last Updated: 2024-03-15</span>
+          </div>
+          <div class="application-progress">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width:80%"></div>
+            </div>
+            <div class="progress-steps">
+              <span class="step step-completed">Submitted</span>
+              <span class="step step-completed">Verification</span>
+              <span class="step step-current">Approval</span>
+              <span class="step">Disbursement</span>
+            </div>
+          </div>
+          <div class="application-details-row">
+            <div><span class="application-label">Business Name:</span> XYZ Pvt Ltd</div>
+            <div><span class="application-label">Purpose:</span> Expansion</div>
+            <div><span class="application-label">Documents:</span> 4 uploaded</div>
+          </div>
+          <div class="application-actions-row">
+            <div class="application-status-msg status-msg-approved">✅ Congratulations! Your loan is approved</div>
+            <div class="application-actions">
+              <button class="view-details-btn">View Details</button>
+              <button class="accept-offer-btn">Accept Offer</button>
+            </div>
+          </div>
+        </div>
+        <div class="application-card">
+          <div class="application-card-header">
+            <div class="application-id">Application #M3N4O5P6</div>
+            <span class="application-status status-rejected">Rejected</span>
+          </div>
+          <div class="application-meta">
+            <span>Amount: ₹100,000</span>
+            <span>Applied: 2024-02-01</span>
+            <span>Last Updated: 2024-02-05</span>
+          </div>
+          <div class="application-progress">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width:100%"></div>
+            </div>
+            <div class="progress-steps">
+              <span class="step step-completed">Submitted</span>
+              <span class="step step-completed">Verification</span>
+              <span class="step step-completed">Approval</span>
+              <span class="step step-completed">Disbursement</span>
+            </div>
+          </div>
+          <div class="application-details-row">
+            <div><span class="application-label">Business Name:</span> DEF Solutions</div>
+            <div><span class="application-label">Purpose:</span> Inventory</div>
+            <div><span class="application-label">Documents:</span> 1 uploaded</div>
+          </div>
+          <div class="application-actions-row">
+            <div class="application-status-msg status-msg-rejected">❌ Application rejected - View reasons</div>
+            <div class="application-actions">
+              <button class="view-details-btn">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="documents" class="tab-section">
+      <div class="section-header">
+        <h1 class="section-title">Document Upload</h1>
+        <div class="ai-badge">
+          <span class="ai-icon">⚡</span>
+          <span>AI-Powered Verification</span>
+        </div>
+      </div>
+
+      <div class="card ai-banner">
+        <div class="ai-banner-content">
+          <div class="ai-icon">⚡</div>
+          <div>
+            <h3>AI Document Assistant</h3>
+            <p>Our AI automatically crops, rotates, and validates your documents for faster processing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="documents-grid" id="documentsGrid">
+        <!-- Document cards will be rendered by JS -->
+      </div>
+
+      <div class="card upload-summary">
+        <h3>Upload Summary</h3>
+        <div class="progress-container">
+          <div class="progress-info">
+            <span>Required documents uploaded</span>
+            <span id="uploadCount">0/4</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="uploadProgressBar" style="width: 0%"></div>
+          </div>
+        </div>
+        <p class="upload-note">All required documents must be uploaded and verified before loan processing can begin.</p>
+      </div>
+    </section>
+    <section id="payments" class="tab-section">
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">Payments</h1>
+        <p class="dashboard-subtitle">Overview of your loans and financial status</p>
+      </div>
+      <div class="dashboard-summary-grid">
+        <div class="summary-card">
+          <div class="summary-card-content">
+            <div>
+              <div class="summary-label">Total Disbursed</div>
+              <div class="summary-value">₹500,000</div>
+            </div>
+            <span class="summary-icon">💵</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-card-content">
+            <div>
+              <div class="summary-label">Outstanding</div>
+              <div class="summary-value">₹231,472</div>
+            </div>
+            <span class="summary-icon">📉</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-card-content">
+            <div>
+              <div class="summary-label">Next EMI</div>
+              <div class="summary-value">₹44,632</div>
+            </div>
+            <span class="summary-icon">📅</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="summary-card-content">
+            <div>
+              <div class="summary-label">Due Date</div>
+              <div class="summary-value">2/15/2024</div>
+            </div>
+            <span class="summary-icon">⏰</span>
+          </div>
+        </div>
+      </div>
+      <div class="card dashboard-card loan-details-card">
+        <div class="loan-details-header">
+          <div>
+            <div class="loan-details-label">Loan Amount</div>
+            <div class="loan-details-value">₹500,000</div>
+          </div>
+          <div>
+            <div class="loan-details-label">Interest Rate</div>
+            <div class="loan-details-value">16% p.a.</div>
+          </div>
+          <div>
+            <div class="loan-details-label">Tenure</div>
+            <div class="loan-details-value">12 months</div>
+          </div>
+          <div class="loan-status-active"><span class="status-dot"></span>Active</div>
+        </div>
+        <div class="repayment-progress-row">
+          <div class="repayment-label">Repayment Progress</div>
+          <div class="repayment-bar-bg">
+            <div class="repayment-bar-fill" style="width:36%"></div>
+          </div>
+          <div class="repayment-paid">Paid: ₹178,528</div>
+          <div class="repayment-remaining">Remaining: ₹231,472</div>
+        </div>
+        <div class="loan-actions">
+          <button class="pay-emi-btn">Pay EMI (₹44,632)</button>
+          <button class="topup-btn">Request Top-Up</button>
+          <button class="download-btn">Download Statement</button>
+        </div>
+      </div>
+      <div class="card dashboard-card upcoming-emis-card">
+        <div class="upcoming-title">Upcoming EMIs</div>
+        <div class="upcoming-emi-list">
+          <div class="upcoming-emi">
+            <div>
+              <div class="emi-label">EMI #1</div>
+              <div class="emi-date">6/6/2025</div>
+            </div>
+            <div class="emi-right">
+              <div class="emi-amount">₹44,632</div>
+              <div class="emi-status emi-due"><span class="emi-status-dot emi-status-dot-due"></span>Due in 5 days</div>
+            </div>
+          </div>
+          <div class="upcoming-emi">
+            <div>
+              <div class="emi-label">EMI #2</div>
+              <div class="emi-date">7/6/2025</div>
+            </div>
+            <div class="emi-right">
+              <div class="emi-amount">₹44,632</div>
+              <div class="emi-status emi-upcoming"><span class="emi-status-dot"></span>Upcoming</div>
+            </div>
+          </div>
+          <div class="upcoming-emi">
+            <div>
+              <div class="emi-label">EMI #3</div>
+              <div class="emi-date">8/6/2025</div>
+            </div>
+            <div class="emi-right">
+              <div class="emi-amount">₹44,632</div>
+              <div class="emi-status emi-upcoming"><span class="emi-status-dot"></span>Upcoming</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="payment-section">
+        <div class="section-header">
+          <h2>Payment Details</h2>
+          <div class="payment-actions">
+            <button class="btn-primary">Pay Now</button>
+            <button class="btn-secondary">Schedule Payment</button>
+          </div>
+        </div>
+        
+        <!-- Flexible Repayment Options -->
+        <div class="flexible-repayment">
+          <h3>Flexible Repayment Options</h3>
+          <div class="repayment-cards">
+            <div class="repayment-card">
+              <div class="card-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h4>Change Due Date</h4>
+              <p>Reschedule your payment date to better match your cash flow</p>
+              <button class="btn-outline">Modify Date</button>
+            </div>
+            
+            <div class="repayment-card">
+              <div class="card-icon">
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+              <h4>Partial Payment</h4>
+              <p>Make a partial payment to reduce your EMI burden</p>
+              <button class="btn-outline">Pay Partial</button>
+            </div>
+            
+            <div class="repayment-card">
+              <div class="card-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+              </div>
+              <h4>EMI Holiday</h4>
+              <p>Take a break from payments for up to 3 months</p>
+              <button class="btn-outline">Request Holiday</button>
+            </div>
+            
+            <div class="repayment-card">
+              <div class="card-icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <h4>Restructure Loan</h4>
+              <p>Modify your loan terms for better repayment</p>
+              <button class="btn-outline">Restructure</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="payment-details">
+          <!-- ... rest of the existing payment details ... -->
+        </div>
+      </div>
+    </section>
+    <section id="history" class="tab-section">
+      <div class="history-header">
+        <h1 class="history-title">Payment History</h1>
+        <p class="history-subtitle">View all your payment transactions and download statements</p>
+        <div class="history-actions">
+          <button class="export-btn"><span class="icon">📥</span> Export</button>
+          <button class="tax-statement-btn"><span class="icon">📄</span> Tax Statement</button>
+        </div>
+      </div>
+      <div class="history-summary-grid" id="historySummaryGrid"></div>
+      <div class="transaction-history-card">
+        <div class="transaction-history-header">
+          <span>Transaction History</span>
+          <div class="transaction-history-searchbar">
+            <input type="text" class="search-box" id="transactionSearch" placeholder="Search transactions..." />
+            <div class="filter-tabs" id="historyFilterTabs"></div>
+          </div>
+        </div>
+        <div class="transaction-list" id="transactionList"></div>
+      </div>
+    </section>
+    <section id="analytics" class="tab-section">
+      <div class="analytics-header">
+        <h1 class="analytics-title">Financial Analytics</h1>
+        <p class="analytics-subtitle">Analyze your financial health and get insights</p>
+        <div class="analytics-actions">
+          <button class="export-btn"><span class="icon">📥</span> Export Report</button>
+          <button class="schedule-btn"><span class="icon">📅</span> Schedule Report</button>
+        </div>
+      </div>
+      <div class="card health-score-card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <span class="icon">📊</span>
+            Financial Health Score
+          </h3>
+        </div>
+        <div class="health-score-content">
+          <div class="score-info">
+            <span class="score-value" id="healthScoreValue">85</span>
+            <span class="score-label" id="healthScoreLabel">Excellent</span>
+          </div>
+          <div class="score-pie">
+            <svg width="80" height="80" viewBox="0 0 36 36">
+              <circle cx="18" cy="18" r="16" fill="#f3f4f6" />
+              <circle cx="18" cy="18" r="16" fill="none" stroke="#2a8e9e" stroke-width="4" stroke-dasharray="85, 100" stroke-linecap="round" transform="rotate(-90 18 18)" />
+            </svg>
+          </div>
+          <div class="score-breakdown">
+            <div class="score-item">
+              <span>Income Stability</span>
+              <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+              <span>25/25</span>
+            </div>
+            <div class="score-item">
+              <span>Cash Flow</span>
+              <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+              <span>25/25</span>
+            </div>
+            <div class="score-item">
+              <span>Debt Management</span>
+              <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+              <span>25/25</span>
+            </div>
+            <div class="score-item">
+              <span>Credit Score</span>
+              <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
+              <span>25/25</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="analytics-tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn active" data-tab="cashflow">Cash Flow</button>
+          <button class="tab-btn" data-tab="utilization">Loan Usage</button>
+          <button class="tab-btn" data-tab="credit">Credit Score</button>
+          <button class="tab-btn" data-tab="projections">Projections</button>
+        </div>
+        <div class="tab-content active" id="tab-cashflow">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><span class="icon">📈</span> Cash Flow Analysis</h3>
+            </div>
+            <div class="chart-container">
+              <div class="chart-svg" style="display:flex;justify-content:center;">
+                <!-- SVG Area Chart -->
+                <svg width="260" height="120" viewBox="0 0 260 120">
+                  <polyline fill="#bae6fd" stroke="#2a8e9e" stroke-width="2" points="0,100 40,80 80,90 120,60 160,40 200,60 240,30 260,50 260,120 0,120" />
+                  <polyline fill="none" stroke="#2a8e9e" stroke-width="3" points="0,100 40,80 80,90 120,60 160,40 200,60 240,30 260,50" />
+                </svg>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item">Income: ₹2,28,333</span>
+                <span class="legend-item">Expenses: ₹1,61,667</span>
+                <span class="legend-item">Net Flow: ₹66,667</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="tab-utilization">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><span class="icon">🥧</span> Loan Utilization</h3>
+            </div>
+            <div class="chart-container">
+              <div class="chart-svg" style="display:flex;justify-content:center;">
+                <!-- SVG Pie Chart -->
+                <svg width="120" height="120" viewBox="0 0 32 32">
+                  <circle r="16" cx="16" cy="16" fill="#f3f4f6" />
+                  <path d="M16 16 L16 0 A16 16 0 1 1 2.7 24.6 Z" fill="#2a8e9e" />
+                  <path d="M16 16 L2.7 24.6 A16 16 0 0 1 16 0 Z" fill="#012333" />
+                  <path d="M16 16 L16 0 A16 16 0 0 1 16 32 Z" fill="#7dd3fc" />
+                </svg>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item">Working Capital: 60%</span>
+                <span class="legend-item">Equipment: 25%</span>
+                <span class="legend-item">Inventory: 15%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="tab-credit">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><span class="icon">💳</span> Credit Score History</h3>
+            </div>
+            <div class="chart-container">
+              <div class="chart-svg" style="display:flex;justify-content:center;">
+                <!-- SVG Line Chart -->
+                <svg width="260" height="120" viewBox="0 0 260 120">
+                  <polyline fill="none" stroke="#2a8e9e" stroke-width="3" points="0,100 40,90 80,80 120,70 160,60 200,50 240,40 260,35" />
+                  <circle cx="0" cy="100" r="3" fill="#2a8e9e" />
+                  <circle cx="40" cy="90" r="3" fill="#2a8e9e" />
+                  <circle cx="80" cy="80" r="3" fill="#2a8e9e" />
+                  <circle cx="120" cy="70" r="3" fill="#2a8e9e" />
+                  <circle cx="160" cy="60" r="3" fill="#2a8e9e" />
+                  <circle cx="200" cy="50" r="3" fill="#2a8e9e" />
+                  <circle cx="240" cy="40" r="3" fill="#2a8e9e" />
+                  <circle cx="260" cy="35" r="3" fill="#2a8e9e" />
+                </svg>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item">Aug: 720</span>
+                <span class="legend-item">Sep: 735</span>
+                <span class="legend-item">Oct: 740</span>
+                <span class="legend-item">Nov: 745</span>
+                <span class="legend-item">Dec: 750</span>
+                <span class="legend-item">Jan: 750</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-content" id="tab-projections">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title"><span class="icon">📅</span> Repayment Projections</h3>
+            </div>
+            <div class="chart-container">
+              <div class="chart-svg" style="display:flex;justify-content:center;">
+                <!-- SVG Bar Chart -->
+                <svg width="260" height="120" viewBox="0 0 260 120">
+                  <rect x="20" y="60" width="20" height="60" fill="#2a8e9e" />
+                  <rect x="60" y="50" width="20" height="70" fill="#7dd3fc" />
+                  <rect x="100" y="40" width="20" height="80" fill="#2a8e9e" />
+                  <rect x="140" y="30" width="20" height="90" fill="#7dd3fc" />
+                  <rect x="180" y="50" width="20" height="70" fill="#2a8e9e" />
+                  <rect x="220" y="60" width="20" height="60" fill="#7dd3fc" />
+                </svg>
+              </div>
+              <div class="chart-legend">
+                <span class="legend-item">Feb 2024: ₹44,632</span>
+                <span class="legend-item">Mar 2024: ₹44,632</span>
+                <span class="legend-item">Apr 2024: ₹44,632</span>
+                <span class="legend-item">May 2024: ₹44,632</span>
+                <span class="legend-item">Jun 2024: ₹44,632</span>
+                <span class="legend-item">Jul 2024: ₹44,632</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="support" class="tab-section">
+      <div class="support-header-row">
+        <h2 class="support-title">Support Center</h2>
+        <span class="support-online-badge"><span class="online-dot"></span>Online</span>
+      </div>
+      <div class="support-grid">
+        <div class="support-left">
+          <div class="card support-card">
+            <div class="support-card-header">Quick Help</div>
+            <div class="support-card-content">
+              <button class="support-btn"><span class="icon">📞</span> Call: 1800-123-4567</button>
+              <button class="support-btn"><span class="icon">✉️</span> Email Support</button>
+              <button class="support-btn"><span class="icon">💬</span> Schedule Callback</button>
+            </div>
+          </div>
+          <div class="card support-card">
+            <div class="support-card-header">Support Hours</div>
+            <div class="support-card-content">
+              <div class="support-hours-row"><span>Monday - Friday</span><span>9 AM - 7 PM</span></div>
+              <div class="support-hours-row"><span>Saturday</span><span>10 AM - 6 PM</span></div>
+              <div class="support-hours-row"><span>Sunday</span><span>Closed</span></div>
+              <div class="support-status-row"><span class="icon">🟢</span> Currently Online</div>
+            </div>
+          </div>
+        </div>
+        <div class="support-right">
+          <div class="card support-chat-card">
+            <div class="support-chat-header">
+                <span class="icon">🤖</span>
+                <span>GK Bot</span>
+            </div>
+            <div class="support-chat-messages" id="supportChatMessages"></div>
+            <div class="support-chat-suggestions" id="supportChatSuggestions"></div>
+            <div class="support-chat-input-container">
+              <input type="text" class="support-chat-input" placeholder="Type your message...">
+              <button class="support-chat-send">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card support-faq-card">
+        <div class="support-faq-header">Frequently Asked Questions</div>
+        <div class="support-faq-list">
+          <div class="support-faq-item">
+            <div class="support-faq-q">Q: What documents do I need to apply for a loan?</div>
+            <div class="support-faq-a">A: You need PAN Card, Aadhaar Card, GST Certificate, 6-month Bank Statements, and Financial Statements.</div>
+          </div>
+          <div class="support-faq-item">
+            <div class="support-faq-q">Q: How long does loan approval take?</div>
+            <div class="support-faq-a">A: Most loans are approved within 2-3 business days after document verification.</div>
+          </div>
+          <div class="support-faq-item">
+            <div class="support-faq-q">Q: Can I prepay my loan?</div>
+            <div class="support-faq-a">A: Yes, you can prepay your loan at any time. Prepayment may help you save on interest.</div>
+          </div>
+          <div class="support-faq-item">
+            <div class="support-faq-q">Q: How do I check my loan status?</div>
+            <div class="support-faq-a">A: You can check your loan status in the Applications section of your dashboard.</div>
+          </div>
+          <div class="support-faq-item">
+            <div class="support-faq-q">Q: Who do I contact for support?</div>
+            <div class="support-faq-a">A: Use the Quick Help options above or email support@lendingkart.com for assistance.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="dashboard-footer">
+    <div class="footer-col">
+      <div class="footer-title">LendingKart</div>
+      <div class="footer-desc">Empowering businesses with fast, transparent, and reliable lending solutions.</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Quick Links</div>
+      <a href="#">Apply for Loan</a>
+      <a href="#">EMI Calculator</a>
+      <a href="#">Check Eligibility</a>
+      <a href="#">Interest Rates</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Support</div>
+      <a href="#">Help Center</a>
+      <a href="#">Contact Us</a>
+      <a href="#">FAQs</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Contact Info</div>
+      <div>📞 1800-123-4567</div>
+      <div>✉️ support@lendingkart.com</div>
+      <div>🕒 Mon-Fri: 9 AM - 7 PM</div>
+      <div>📍 Mumbai, India</div>
+    </div>
+    <div class="footer-bottom">© 2024 LendingKart. All rights reserved. | Privacy Policy | Terms of Service</div>
+  </footer>
+  <div id="chatbot-fab" class="chatbot-fab">💬</div>
+  <div id="chatbot-window" class="chatbot-window">
+    <div class="chatbot-header">
+        <div class="avatar"></div>
+        <span>GK BoT</span>
+        <button id="chatbot-close">×</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages"></div>
+    <div class="chatbot-input-container">
+        <input type="text" id="chatbot-input" placeholder="query">
+        <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+    </div>
+  </div>
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/chatbot.js" defer></script>
+</body>
+</html> 

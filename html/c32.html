@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RD Calculator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/eligibility-cards.css">
+    <link rel="stylesheet" href="../css/c32.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/logo-redirect.js" defer></script>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="/Users/gauravkulkarni/Desktop/1st-year -prj/assets/icons/Image (2).png" alt="Logo" />
+        </div>
+        <ul class="navbar-menu">
+            <li class="navbar-item dropdown">
+                <a href="#">Products</a>
+                <ul class="dropdown-menu">
+                    <li><a href="A1.html">Business Loan</a></li>
+                    <li><a href="A2.html">Working Capital Loan</a></li>
+                    <li><a href="A3.html">SME Loan</a></li>
+                    <li><a href="A4.html">Business Loan for Women</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Partners</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Enterprise Solution</a></li>
+                    <li><a href="#">Become a Channel Partner</a></li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Calculator</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-submenu">
+                        <a href="#">EMI Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c11.html">Business Loan EMI Calculator-Quick & Easy Estimation</a></li>
+                            <li><a href="c12.html">Working Capital Loan EMI Calculator-Lendinkart</a></li>
+                            <li><a href="c13.html">Commercial Loan EMI Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Tax Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c21.html">GST Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Saving Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c31.html">FD Calculator</a></li>
+                            <li><a href="c32.html">Recurring Deposit Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="#">Loan Calculator</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="c41.html">Foreclosure Calculator</a></li>
+                            <li><a href="c42.html">GST Invoice Generator</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="navbar-item dropdown">
+                <a href="#">Resource</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Lendingkart Blog: Business</a></li>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Quick Links</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <button class="navbar-btn outline" onclick="window.location.href='login.html'">Login</button>
+            <button class="navbar-btn filled" onclick="window.location.href='apply.html'">Apply Now</button>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="page-layout">
+        <div class="main-content">
+            <div class="container">
+                <h1>RD Calculator: Easy Calculation for Recurring Deposits</h1>
+                
+                <div class="calculator-container">
+                    <div class="input-section">
+                        <label class="input-label">Monthly Amount</label>
+                        <div class="slider-container">
+                            <input type="range" id="monthlyAmount" min="1000" max="1000000" value="1000" step="1000" class="slider">
+                            <div class="value-box" id="monthlyAmount-value">₹1,000</div>
+                        </div>
+                        <div class="input-range">
+                            <span>₹1,000</span>
+                            <span>₹10,00,000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <label class="input-label">Tenure (Months)</label>
+                        <div class="slider-container">
+                            <input type="range" id="tenure" min="6" max="36" value="6" step="1" class="slider">
+                            <div class="value-box" id="tenure-value">6</div>
+                        </div>
+                        <div class="input-range">
+                            <span>6 Months</span>
+                            <span>36 Months</span>
+                        </div>
+                    </div>
+                    
+                    <div class="input-section">
+                        <label class="input-label">Interest Rate (%)</label>
+                        <div class="slider-container">
+                            <input type="range" id="interestRate" min="13.5" max="35" value="13.5" step="0.1" class="slider">
+                            <div class="value-box" id="interestRate-value">13.5%</div>
+                        </div>
+                        <div class="input-range">
+                            <span>13.5%</span>
+                            <span>35%</span>
+                        </div>
+                    </div>
+                    
+                    <button class="calculate-btn">Calculate</button>
+                    
+                    <div class="results-container" id="resultsContainer">
+                        <div class="chart-container">
+                            <canvas id="rdChart"></canvas>
+                        </div>
+                        <div class="results-text">
+                            <div class="result-item">
+                                <div class="result-label">Invested Amount</div>
+                                <div class="result-value" id="totalInvestment">₹6,000</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Wealth Gains</div>
+                                <div class="result-value" id="wealthGained">₹241</div>
+                            </div>
+                            <div class="result-item">
+                                <div class="result-label">Maturity Amount</div>
+                                <div class="result-value" id="maturityAmount">₹6,241</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Recurring Deposits are a form of investment that is similar to fixed deposits. It differs from fixed deposits in the manner in which the money is deposited. FDs take in a lump sum amount while RDs accept fixed monthly deposits. Recurring deposits are a relatively low-risk form of investment and helps inculcate strong investment sense in the public. It offers higher returns than a savings account and is offered by all leading banks and financial institutions in the country.</p>
+                
+                <p>When one is looking to start investing in a recurring deposit, it becomes difficult to understand how much to invest and how the rate of interest and the tenure of RD will effect their investment. This is when a recurring deposit calculator is used.</p>
+                
+                <h2>How to use a RD calculator</h2>
+                <p>The step-by-step guide on how to effectively use a RD calculator is as follows:</p>
+                
+                <ol>
+                    <li>Open up the RD calculator webpage.</li>
+                    <li>There will fields to enter details like monthly deposit amount, rate of interest etc. that need to be filled up. Enter the monthly deposit amount. For example, the deposit amount is INR 2,000.</li>
+                    <li>Some calculators will have a rate of interest put in and some will have a scale where one can enter their own rate of interest. For our example, we are using the rate of interest as 7.5%.</li>
+                    <li>The last detail to enter is the tenure of the RD. The tenure range can be anywhere between a couple of months to up to 10 years. For our example we are using 2 years.</li>
+                    <li>Click 'calculate' and the maturity amount will be displayed. For our deposit amount of INR 2,000 at 7.5% interest rate for a period of 2 years, the maturity amount is INR 51, 936.</li>
+                </ol>
+                
+                <h2>Eligibility for recurring deposits</h2>
+                <p>A recurring deposit is open to anyone who fits the below eligibility criteria.</p>
+                
+                <ol>
+                    <li>An individual</li>
+                    <li>A minor who is above the age of 10 years if they can provide proof of their name.</li>
+                    <li>A minor who is below the age of 10 years if their legal guardian is with them</li>
+                    <li>A company, corporate, proprietorship or commercial organization</li>
+                    <li>A government organization.</li>
+                </ol>
+                
+                <h2>Documents required to open up a recurring deposit</h2>
+                <p>The documents list to open up a recurring deposit is not long and generally includes the following:</p>
+                
+                <ol>
+                    <li>Filled out application form that can be availed from the bank under which the RD is to be opened.</li>
+                    <li>Passport size photographs</li>
+                    <li>Identity proof like voter id, aadhar card etc.</li>
+                    <li>Address proof like utility bills, bank statements etc.</li>
+                    <li>KYC documents as and when the bank requires them.</li>
+                </ol>
+                
+                <h2>How is recurring deposit interest calculated?</h2>
+                <p>A good step in understanding how RD calculators work is to understand how recurring deposit and their interest rates work. The interest on RD is compounded quarterly by most banks and financial institutions. The formula to calculate maturity value of a RD is as follows:</p>
+                
+                <p>M = R[(1+i)^n-1]/(1-(1+i)^(-1/3) )</p>
+                
+                <p>Where,</p>
+                <p>M = Maturity Value</p>
+                <p>R = Monthly Installment</p>
+                <p>n = Number of quarters</p>
+                <p>I = Rate of interest/400</p>
+                
+                <p>As evident by the formulae, manually calculating the maturity value would be a hard task and will take much time. This is when using a RD calculator will be extremely beneficial.</p>
+                
+                <h2>Benefits of investing in a recurring deposit</h2>
+                <ol>
+                    <li>
+                        <strong>Suitable for short tem investment goals:</strong> As opposed to mutual finds, whose performance is based on the market movement, recurring deposits are the best for short term-investment goals. Returns are guaranteed and it a risk-free form of investment. For cases like, planning an overseas vacation in a year or two, an RD is the perfect choice.
+                    </li>
+                    <li>
+                        <strong>Additional features:</strong> Most banks offer additional features for an online RD that make it a more attractive form of investment. The customer has full control over their RD including, opening a RD account, closing it, updating information, open another RD etc. can be done right from home.
+                    </li>
+                    <li>
+                        <strong>Better interest rates:</strong> Interest rates on RDs vary from bank to bank and is based on the investment tenure. Interest rates vary from as little as 7.25% to as high as 9%. One can use a RD calculator to figure out their returns based on the interest rates and decide on a bank to get the best interest rate and high return.
+                    </li>
+                    <li>
+                        <strong>Flexibility:</strong> Recurring deposits are a more flexible form of investment over other forms of investment. Some banks do not penalize the customer if the monthly deposit is done. Another aspect of its flexibility is the ability to withdraw the deposits anytime wanted.
+                    </li>
+                    <li>
+                        <strong>Better savings habit:</strong> Recurring deposits are a great way to learn better savings habits. One can put in as little as INR 1,000 each month in the RD account. Besides the benefit of getting the maturity value, regularly putting in an amount of money aside becomes a regular habit for the customers.
+                    </li>
+                </ol>
+                
+                <h2>Tax implications of investing in a recurring deposit</h2>
+                <p>Recurring deposits attract taxes like other investment instruments do. A TDS of 10% is deducted on the recurring deposit. The TDS is only deducted if the income from the interest is not more than INR 10,000 in one financial year. It is worth noting that only the interest income is taxable and not the maturity amount. Tax is to be paid as per the income tax slab. If the investor is not earning taxable income then Form 15G is to be filled out in order to avoid TDS on both RDs and FDs.</p>
+                
+                <h2>Recurring Deposit Interest rates and tenures from leading banks</h2>
+                <p>The interest rate range and tenures, for recurring deposits, available at some of the leading Indian banks are as follows.</p>
+                
+                <table>
+                    <tr>
+                        <th>Bank</th>
+                        <th>Interest rates</th>
+                        <th>Tenure</th>
+                    </tr>
+                    <tr>
+                        <td>SBI</td>
+                        <td>Up to 6.10%</td>
+                        <td>1 to 10 years</td>
+                    </tr>
+                    <tr>
+                        <td>HDFC Bank</td>
+                        <td>Up to 5.40%</td>
+                        <td>6 months to 120 months</td>
+                    </tr>
+                    <tr>
+                        <td>ICICI Bank</td>
+                        <td>6.25% to 7.50%</td>
+                        <td>6 months to 10 years</td>
+                    </tr>
+                    <tr>
+                        <td>Axis Bank</td>
+                        <td>7% to 7.60%</td>
+                        <td>9 months to 10 years</td>
+                    </tr>
+                    <tr>
+                        <td>IDBI Bank</td>
+                        <td>6% to 7.05%</td>
+                        <td>1 year to 20 years</td>
+                    </tr>
+                    <tr>
+                        <td>PNB</td>
+                        <td>6.25% to 6.75%</td>
+                        <td>180 days to 10 years</td>
+                    </tr>
+                    <tr>
+                        <td>Allahabad Bank</td>
+                        <td>6.50% to 6.75%</td>
+                        <td>180 days to 10 years</td>
+                    </tr>
+                </table>
+                
+                <h2>Factors affecting RD interest rates</h2>
+                <ol>
+                    <li>
+                        <strong>Tenure:</strong> The time over which the RD is being made affects the interest rate. Interest rate will be different over different tenures.
+                    </li>
+                    <li>
+                        <strong>Age of the investor:</strong> Most banks and financial institutions provide different interest rates for senior citizens. This is why the minimum age criteria is different from bank to bank.
+                    </li>
+                    <li>
+                        <strong>Market conditions:</strong> Changes in the economy dictate any changes made to the interest rates. Reasons like RBI changes, inflation etc. reflect heavily on the interest rates of RDs'.
+                    </li>
+                </ol>
+                
+                <section class="faq-section">
+                    <h2>Frequently Asked Questions:</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What is a Recurring Deposit Calculator?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>A Recurring Deposit Calculator helps you calculate the maturity amount and interest earned on your RD investment. It considers the monthly deposit amount, interest rate, and tenure to show you the exact returns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>How is RD interest calculated?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>RD interest is calculated using the formula: M = R × [(1 + i)^n - 1] / (1 - (1 + i)^(-1/3)), where M is the maturity amount, R is the monthly deposit, i is the interest rate per month, and n is the number of months.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What factors affect RD returns?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>RD returns are affected by the monthly deposit amount, interest rate, and tenure. Higher deposits, rates, and longer tenures result in higher returns. The compounding frequency also impacts the final amount.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What is the minimum deposit amount for RD?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>The minimum deposit amount for RD varies by bank, typically ranging from ₹100 to ₹1,000 per month. Some banks may have higher minimum amounts for specific RD schemes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>How accurate is the RD calculator?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Our RD calculator provides accurate estimates based on your inputs. However, the actual returns may vary slightly due to TDS deductions, changes in interest rates, or other applicable charges.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>Can I withdraw my RD before maturity?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>Yes, you can withdraw your RD before maturity, but this may result in a penalty or lower interest rate. The exact terms depend on your bank's policies and the type of RD you have chosen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span class="toggle-icon">+</span>
+                            <h3>What is the tax treatment of RD interest?</h3>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <p>RD interest is taxable as per your income tax slab. Banks deduct TDS (Tax Deducted at Source) if the interest exceeds ₹40,000 in a financial year (₹50,000 for senior citizens).</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <!-- Eligibility Form -->
+            <div class="eligibility-form">
+                <h2 class="eligibility-title">Check your eligibility</h2>
+                <p style="margin-bottom: 20px;">Get your loan eligibility checked in just a few seconds!</p>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-input">
+                        <div class="form-note">(as per PAN)</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email ID</label>
+                        <input type="email" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Do you have business registration proof?</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Monthly Sales</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">How old is your business</label>
+                        <select class="form-input">
+                            <option value="">Select</option>
+                            <option value="0-1">Less than 1 year</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="5+">More than 5 years</option>
+                        </select>
+                    </div>
+                    <div style="background: #f8f8f8; padding: 10px; margin: 20px 0; text-align: center;">
+                        All the fields are mandatory
+                    </div>
+                    <button type="button" class="check-eligibility-btn">Check Eligibility</button>
+                    <div class="terms-text">
+                        I hereby confirm that I have read, understood and agree to the mentioned 
+                        <a href="#">T&C</a>, <a href="#">Terms Of Use</a> and <a href="#">Privacy Policy</a> 
+                        and receive communication via SMS, E-mail, and Whatsapp. I hereby authorise 
+                        Lendingkart Finance Limited (LFL), its affiliate(s) and lending partners, 
+                        to view, save, download and store CKYCR records, update or report my KYC 
+                        details with the Central KYC Registry (CERSAI) and further authorise LFL 
+                        to share this information with its affiliate(s) and lending partners.
+                    </div>
+                </form>
+            </div>
+            <!-- Sidebar Cards -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ZED Certification Scheme and Why It Matters for MSMEs in India</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is the ISO MSME Reimbursement Scheme and How Can It Benefit Your Business?</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What Is CGST?</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">What is P2P Lending? Everything You Need to Know About Peer-to-Peer Loans</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Pros and Cons of MSME Loans: A Balanced Guide for Small Business Owners</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business loan</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Apply Online Business Loans in Bangalore up to ₹50 Lakhs</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Eligibility</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan Interest Rate</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loan EMI Calculator – Quick & Easy Estimation</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Instant Business Loan</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">Business Loan Types</h3>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Get a Commercial Loan for Small Business – Quick Application</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Business Loans For Women</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">MSME Loan / SME Loan – Apply For MSME Business Loan Online</a></li>
+                    <li class="sidebar-item"><a href="#" class="sidebar-link">Easy Ways to Apply for a Working Capital Loan in India</a></li>
+                </ul>
+                <a href="#" class="view-more">view more</a>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/eligibility-check.js"></script>
+    <script src="../js/c32.js"></script>
+    <div id="chatbot-fab" class="chatbot-fab">💬</div>
+    <div id="chatbot-window" class="chatbot-window">
+        <div class="chatbot-header">
+            <div class="avatar"></div>
+            <span>GK BoT</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="query">
+            <button id="chatbot-send"><svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M2 21l21-9-21-9v7l15 2-15 2z"/></svg></button>
+        </div>
+    </div>
+    <script src="../js/chatbot.js" defer></script>
+    <style>
+        .faq-section {
+            margin-top: 40px;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #e9ecef;
+        }
+        
+        .faq-question h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+            flex-grow: 1;
+        }
+        
+        .toggle-icon {
+            font-size: 20px;
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const toggleIcon = this.querySelector('.toggle-icon');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        if (item !== answer) {
+                            item.style.display = 'none';
+                            item.previousElementSibling.querySelector('.toggle-icon').textContent = '+';
+                        }
+                    });
+                    
+                    // Toggle current answer
+                    if (answer.style.display === 'none') {
+                        answer.style.display = 'block';
+                        toggleIcon.textContent = '−';
+                    } else {
+                        answer.style.display = 'none';
+                        toggleIcon.textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

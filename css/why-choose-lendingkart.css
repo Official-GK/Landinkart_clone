@@ -1,0 +1,727 @@
+/* Main Content Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #023347 0%, #034b67 100%);
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Loan Packages Section */
+.loan-packages {
+    padding: 60px 0;
+}
+
+.loan-packages h2 {
+    text-align: center;
+    color: #023347;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.package-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+}
+
+.package-card.featured {
+    border: 2px solid #023347;
+    transform: scale(1.05);
+}
+
+.package-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.package-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.package-header h3 {
+    color: #023347;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.loan-range {
+    color: #666;
+    font-size: 1.2em;
+}
+
+.interest-rate {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.interest-rate .rate {
+    font-size: 2.5em;
+    color: #023347;
+    font-weight: bold;
+}
+
+.interest-rate .period {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.features li {
+    padding: 10px 0;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.apply-btn {
+    width: 100%;
+    background: #023347;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+    background: #034b67;
+}
+
+/* Benefits Section */
+.benefits {
+    padding: 60px 0;
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.benefits h2 {
+    text-align: center;
+    color: #023347;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.benefit-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    color: #023347;
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    color: #666;
+}
+
+/* Government Schemes Section */
+.government-schemes {
+    padding: 60px 0;
+}
+
+.government-schemes h2 {
+    text-align: center;
+    color: #023347;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.schemes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.scheme-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.scheme-card h3 {
+    color: #023347;
+    margin-bottom: 15px;
+}
+
+.scheme-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.scheme-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.scheme-card ul li {
+    padding: 8px 0;
+    color: #444;
+    border-bottom: 1px solid #eee;
+}
+
+.scheme-card ul li:last-child {
+    border-bottom: none;
+}
+
+.learn-more {
+    color: #023347;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Success Stories Section */
+.success-stories {
+    padding: 60px 0;
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.success-stories h2 {
+    text-align: center;
+    color: #023347;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.story-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.story-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.story-card h3 {
+    color: #023347;
+    margin-bottom: 10px;
+}
+
+.story-card p {
+    color: #666;
+    font-style: italic;
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #023347 0%, #034b67 100%);
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.cta h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cta-btn {
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cta-btn.primary {
+    background: white;
+    color: #023347;
+}
+
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+/* Business Health Section */
+.business-health {
+    padding: 60px 0;
+    background: #f8f9fa;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.business-health h2 {
+    text-align: center;
+    color: #023347;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.health-factors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.factor-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.factor-icon {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.factor-icon img {
+    width: 60px;
+    height: 60px;
+}
+
+.factor-card h3 {
+    color: #023347;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Rate Tiers Styles */
+.rate-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tier {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tier-label {
+    color: #023347;
+    font-weight: 600;
+}
+
+.tier-value {
+    color: #034b67;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.tier-condition {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* History Benefits Styles */
+.history-benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.history-benefits li {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.history-benefits li:last-child {
+    margin-bottom: 0;
+}
+
+.benefit {
+    color: #023347;
+    font-weight: 600;
+}
+
+.condition {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Credit Tiers Styles */
+.credit-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.credit-tier {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.score-range {
+    color: #023347;
+    font-weight: 600;
+}
+
+.rate-benefit {
+    color: #034b67;
+    font-weight: 500;
+}
+
+/* Rate Calculator Styles */
+.rate-calculator {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.rate-calculator h3 {
+    color: #023347;
+    margin-bottom: 15px;
+}
+
+.rate-calculator p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.calculator-btn {
+    background: #023347;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.calculator-btn:hover {
+    background: #034b67;
+}
+
+/* Rate Note Styles */
+.rate-note {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.rate-note p {
+    color: #666;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Repayment Options Section */
+.repayment-options {
+    padding: 60px 0;
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 60px;
+}
+
+.repayment-options h2 {
+    text-align: center;
+    color: #023347;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.repayment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.repayment-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.repayment-card:hover {
+    transform: translateY(-5px);
+}
+
+.repayment-card.featured {
+    background: #023347;
+    color: white;
+}
+
+.repayment-card h3 {
+    color: #023347;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.repayment-card.featured h3 {
+    color: white;
+}
+
+.repayment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.repayment-card.featured .detail-item {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.detail-item .label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.repayment-card.featured .detail-item .label {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-item .value {
+    color: #023347;
+    font-weight: 600;
+}
+
+.repayment-card.featured .detail-item .value {
+    color: white;
+}
+
+.repayment-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.feature h4 {
+    color: #023347;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.feature p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.feature ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature ul li {
+    color: #666;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.feature ul li:before {
+    content: "•";
+    color: #023347;
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .package-card.featured {
+        transform: none;
+    }
+
+    .package-card.featured:hover {
+        transform: translateY(-10px);
+    }
+
+    .benefits-grid,
+    .schemes-grid,
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .health-factors {
+        grid-template-columns: 1fr;
+    }
+
+    .credit-tier {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .rate-calculator {
+        padding: 20px;
+    }
+
+    .repayment-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .repayment-features {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+}
+
+.navbar-logo {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+    opacity: 0.8;
+} 
