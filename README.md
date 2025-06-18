@@ -11,12 +11,6 @@ A modern, responsive personal loan website built with HTML, CSS, and JavaScript.
 - **Accessibility**: Built with accessibility best practices
 - **Cross-browser Compatible**: Works on all modern browsers
 
-## 📱 Responsive Breakpoints
-
-- **Mobile**: 320px - 767px
-- **Tablet**: 768px - 1023px
-- **Desktop**: 1024px - 1439px
-- **Large Desktop**: 1440px+
 
 ## 🛠️ Technologies Used
 
@@ -62,11 +56,6 @@ A modern, responsive personal loan website built with HTML, CSS, and JavaScript.
 
 ## 📱 Responsive Features
 
-### Mobile Optimizations
-- Touch-friendly interface with 48px minimum touch targets
-- Optimized font sizes for readability
-- Simplified navigation with hamburger menu
-- Stacked layouts for better mobile experience
 
 ### Tablet & Desktop Features
 - Multi-column layouts
@@ -136,24 +125,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need support, please open an issue on GitHub or contact the development team.
 
-## 🚀 Deployment
-
-### GitHub Pages
-1. Push your code to GitHub
-2. Go to repository Settings > Pages
-3. Select source branch (usually `main`)
-4. Your site will be available at `https://username.github.io/repository-name`
-
-### Netlify
-1. Connect your GitHub repository to Netlify
-2. Deploy automatically on every push
-3. Get a custom domain and SSL certificate
-
-### Vercel
-1. Import your GitHub repository to Vercel
-2. Automatic deployments on every commit
-3. Preview deployments for pull requests
-
----
-
-**Made with ❤️ for better financial experiences** 
