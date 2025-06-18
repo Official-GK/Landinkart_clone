@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/eligibility-cards.css">
     <link rel="stylesheet" href="../css/c12.css">
     <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/logo-redirect.js" defer></script>
     <style>
         /* Remove calculator-specific styles from here. Only keep layout/global styles. */
@@ -248,9 +249,14 @@
                         <span>35%</span>
                     </div>
                 </div>
-                <button class="calculate-btn">Calculate</button>
-                <div class="results-container" id="resultsContainer">
-                    <div class="results-text">
+                <button type="button" class="calculate-btn">Calculate</button>
+                
+                <!-- Results Container -->
+                <div id="resultsContainer" class="results-container" style="display: none;">
+                    <div class="chart-container">
+                        <canvas id="emiChart"></canvas>
+                    </div>
+                    <div class="results-summary">
                         <div class="result-item">
                             <div class="result-label">Monthly EMI</div>
                             <div class="result-value" id="emiResult">₹0</div>
@@ -260,7 +266,7 @@
                             <div class="result-value" id="interestResult">₹0</div>
                         </div>
                         <div class="result-item">
-                            <div class="result-label">Total Payment</div>
+                            <div class="result-label">Total Amount</div>
                             <div class="result-value" id="totalResult">₹0</div>
                         </div>
                     </div>

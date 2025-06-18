@@ -26,57 +26,127 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set initial value box value on page load
     amountValueBox.textContent = formatINR(amountSlider.value);
 
+    // Update slider background
+    function updateSliderBackground(slider) {
+        const min = parseFloat(slider.min);
+        const max = parseFloat(slider.max);
+        const value = parseFloat(slider.value);
+        const percentage = ((value - min) / (max - min)) * 100;
+        slider.style.background = `linear-gradient(to right, #12a9c0 0%, #12a9c0 ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
+    }
+
+    // Initialize slider background
+    updateSliderBackground(amountSlider);
+
     // Sync slider and value box
     amountSlider.addEventListener('input', function() {
         amountValueBox.textContent = formatINR(this.value);
-        updateSliderUI(amountSlider, this.value, Number(amountSlider.min), Number(amountSlider.max));
+        updateSliderBackground(this);
     });
 
-    // Colored track fill for slider
-    function updateSliderUI(slider, value, min, max) {
-        const percent = ((value - min) / (max - min)) * 100;
-        slider.style.background = `linear-gradient(to right, #12a9c0 0%, #12a9c0 ${percent}%, #e0e0e0 ${percent}%, #e0e0e0 100%)`;
-    }
-    // Initial UI
-    updateSliderUI(amountSlider, amountSlider.value, Number(amountSlider.min), Number(amountSlider.max));
+    // Chart initialization
+    let gstChart = null;
 
-    // GST Calculation logic
-    calculateBtn.addEventListener('click', function() {
-        // Get amount
-        const amount = Number(amountSlider.value);
-        // Get GST rate
-        let gstRate = 0;
-        for (const radio of gstRateRadios) {
-            if (radio.checked) {
-                gstRate = parseFloat(radio.value);
-                break;
+    function initializeChart() {
+        const ctx = document.getElementById('gstChart').getContext('2d');
+        gstChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Base Amount', 'GST Amount'],
+                datasets: [{
+                    data: [0, 0],
+                    backgroundColor: [
+                        '#12a9c0',
+                        '#ff6b6b'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + formatINR(context.raw);
+                            }
+                        }
+                    }
+                }
             }
+        });
+    }
+
+    // Update chart with new data
+    function updateChart(baseAmount, gstAmount) {
+        if (!gstChart) {
+            initializeChart();
         }
-        if (!gstRate) gstRate = 18; // default
-        // Get GST type
+        
+        gstChart.data.datasets[0].data = [
+            baseAmount,
+            gstAmount
+        ];
+        
+        gstChart.update();
+    }
+
+    // Calculate GST
+    function calculateGST() {
+        const amount = parseFloat(amountSlider.value) || 0;
+        const gstRate = parseFloat(gstRateRadios[0].value) || 0;
         const isExclusive = gstTypeExclusive && gstTypeExclusive.checked;
-        const isInclusive = gstTypeInclusive && gstTypeInclusive.checked;
-        // Calculate
-        let gstAmount = 0, totalAmount = 0, baseAmount = 0;
+        
+        let baseAmount, gstAmount, totalAmount;
+        
         if (isExclusive) {
-            gstAmount = amount * gstRate / 100;
-            totalAmount = amount + gstAmount;
             baseAmount = amount;
-        } else if (isInclusive) {
-            baseAmount = amount / (1 + gstRate / 100);
-            gstAmount = amount - baseAmount;
-            totalAmount = amount;
+            gstAmount = (amount * gstRate) / 100;
+            totalAmount = baseAmount + gstAmount;
         } else {
-            // Default to exclusive
-            gstAmount = amount * gstRate / 100;
-            totalAmount = amount + gstAmount;
-            baseAmount = amount;
+            totalAmount = amount;
+            baseAmount = (amount * 100) / (100 + gstRate);
+            gstAmount = totalAmount - baseAmount;
         }
-        // Display results in the result-section
+        
+        // Update result values
         document.getElementById('gst-amount').textContent = formatINR(Math.round(gstAmount));
         document.getElementById('total-amount').textContent = formatINR(Math.round(totalAmount));
+        
+        // Update chart
+        updateChart(
+            Math.round(baseAmount),
+            Math.round(gstAmount)
+        );
+    }
+
+    // Initialize calculator when DOM is loaded
+    initializeChart();
+    
+    // Add event listeners
+    amountSlider.addEventListener('input', calculateGST);
+    
+    gstRateRadios.forEach(radio => {
+        radio.addEventListener('change', calculateGST);
     });
-}); 
+    
+    gstTypeExclusive.addEventListener('change', calculateGST);
+    gstTypeInclusive.addEventListener('change', calculateGST);
+    
+    // Initial calculation
+    calculateGST();
+});
+
 document.querySelectorAll('.faq-header').forEach(header => {
     header.addEventListener('click', () => {
         const content = header.nextElementSibling;

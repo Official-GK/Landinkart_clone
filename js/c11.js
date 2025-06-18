@@ -177,4 +177,110 @@ calculateBtn.addEventListener('click', updateCalculator);
 
 // Hide results initially
 const resultsContainer = document.querySelector('.results-container');
-if (resultsContainer) resultsContainer.classList.remove('show'); 
+if (resultsContainer) resultsContainer.classList.remove('show');
+
+// Chart initialization
+let emiChart = null;
+
+function initializeChart() {
+    const ctx = document.getElementById('emiChart').getContext('2d');
+    emiChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Principal Amount', 'Interest Amount'],
+            datasets: [{
+                data: [0, 0],
+                backgroundColor: [
+                    '#12a9c0',
+                    '#ff6b6b'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.label + ': ' + formatINR(context.raw);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Update chart with new data
+function updateChart(principal, interest) {
+    if (!emiChart) {
+        initializeChart();
+    }
+    
+    emiChart.data.datasets[0].data = [
+        principal,
+        interest
+    ];
+    
+    emiChart.update();
+}
+
+// Format currency in Indian format
+function formatINR(num) {
+    return '₹' + Number(num).toLocaleString('en-IN');
+}
+
+// Calculate EMI
+function calculateEMI() {
+    const principal = parseFloat(document.querySelector('input[type="number"]').value) || 0;
+    const rate = parseFloat(document.querySelectorAll('input[type="number"]')[2].value) || 0;
+    const tenure = parseFloat(document.querySelectorAll('input[type="number"]')[1].value) || 0;
+    
+    // Monthly interest rate
+    const monthlyRate = rate / 12 / 100;
+    
+    // Calculate EMI
+    const emi = principal * monthlyRate * Math.pow(1 + monthlyRate, tenure) / (Math.pow(1 + monthlyRate, tenure) - 1);
+    
+    // Calculate total interest
+    const totalInterest = (emi * tenure) - principal;
+    
+    // Update results
+    document.querySelector('.principal-amount').textContent = formatINR(Math.round(principal));
+    document.querySelector('.interest-amount').textContent = formatINR(Math.round(totalInterest));
+    document.querySelector('.result-value:last-child').textContent = formatINR(Math.round(emi));
+    document.querySelector('.total-payable').textContent = 'Total Amount Payable: ' + formatINR(Math.round(principal + totalInterest));
+    
+    // Update chart
+    updateChart(
+        Math.round(principal),
+        Math.round(totalInterest)
+    );
+}
+
+// Initialize calculator when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize chart
+    initializeChart();
+    
+    // Add event listeners
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('input', calculateEMI);
+    });
+    
+    document.querySelector('.calculate-btn').addEventListener('click', calculateEMI);
+    
+    // Initial calculation
+    calculateEMI();
+}); 

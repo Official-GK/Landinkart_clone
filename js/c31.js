@@ -166,3 +166,194 @@ document.addEventListener('DOMContentLoaded', function() {
     updateSliderUI(rateSlider, this.value, 13.5, 35);
   });
 });
+
+// Chart initialization
+let fdChart = null;
+
+function initializeChart() {
+    const ctx = document.getElementById('fdChart').getContext('2d');
+    fdChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Principal Amount', 'Interest Earned'],
+            datasets: [{
+                data: [0, 0],
+                backgroundColor: [
+                    '#12a9c0',
+                    '#ff6b6b'
+                ],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return context.label + ': ' + formatINR(context.raw);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Update chart with new data
+function updateChart(principal, interest) {
+    if (!fdChart) {
+        initializeChart();
+    }
+    
+    fdChart.data.datasets[0].data = [
+        principal,
+        interest
+    ];
+    
+    fdChart.update();
+}
+
+// Format currency in Indian format
+function formatINR(num) {
+    return '₹' + Number(num).toLocaleString('en-IN');
+}
+
+// Format number to Indian currency format
+function formatIndianCurrency(number) {
+    return new Intl.NumberFormat('en-IN', {
+        style: 'currency',
+        currency: 'INR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(number);
+}
+
+// Get DOM elements
+const principalSlider = document.getElementById('principal');
+const tenureSlider = document.getElementById('tenure');
+const rateSlider = document.getElementById('rate');
+const principalValue = document.getElementById('principal-value');
+const tenureValue = document.getElementById('tenure-value');
+const rateValue = document.getElementById('rate-value');
+const investedAmount = document.getElementById('investedAmount');
+const wealthGains = document.getElementById('wealthGains');
+const maturityAmount = document.getElementById('maturityAmount');
+const resultsContainer = document.querySelector('.results');
+const chartContainer = document.querySelector('.chart-container');
+
+function calculateFD(P, N, R, frequency) {
+    const r = R / 100; // annual interest rate
+    let n = N / 12; // convert months to years
+    
+    // Adjust for compounding frequency
+    switch(frequency) {
+        case 'monthly':
+            n *= 12;
+            r /= 12;
+            break;
+        case 'quarterly':
+            n *= 4;
+            r /= 4;
+            break;
+        case 'half-yearly':
+            n *= 2;
+            r /= 2;
+            break;
+        // yearly is default
+    }
+    
+    const A = P * Math.pow(1 + r, n);
+    const interest = A - P;
+    
+    return {
+        maturity: A,
+        interest: interest
+    };
+}
+
+function updateSliderBackground(slider) {
+    const min = parseFloat(slider.min);
+    const max = parseFloat(slider.max);
+    const value = parseFloat(slider.value);
+    const percentage = ((value - min) / (max - min)) * 100;
+    slider.style.background = `linear-gradient(to right, #12a9c0 0%, #12a9c0 ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
+}
+
+function updateSliderValue(slider, valueDisplay, isPercentage = false) {
+    const value = parseFloat(slider.value);
+    valueDisplay.value = isPercentage ? `${value.toFixed(1)}` : formatIndianCurrency(value);
+    updateSliderBackground(slider);
+}
+
+function updateResults() {
+    const P = parseInt(principalSlider.value);
+    const N = parseInt(tenureSlider.value);
+    const R = parseFloat(rateSlider.value);
+    const frequency = document.querySelector('input[name="frequency"]:checked').id;
+    
+    const result = calculateFD(P, N, R, frequency);
+    
+    // Update result displays
+    investedAmount.textContent = formatINR(P);
+    wealthGains.textContent = formatINR(Math.round(result.interest));
+    maturityAmount.textContent = formatINR(Math.round(result.maturity));
+    
+    // Show results and chart
+    resultsContainer.classList.remove('hidden');
+    chartContainer.classList.remove('hidden');
+    
+    // Update chart
+    updateChart(
+        Math.round(P),
+        Math.round(result.interest)
+    );
+}
+
+// Initialize calculator when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize chart
+    initializeChart();
+    
+    // Initialize slider backgrounds
+    updateSliderBackground(principalSlider);
+    updateSliderBackground(tenureSlider);
+    updateSliderBackground(rateSlider);
+    
+    // Add event listeners for sliders
+    principalSlider.addEventListener('input', () => {
+        updateSliderValue(principalSlider, principalValue);
+        updateResults();
+    });
+    
+    tenureSlider.addEventListener('input', () => {
+        updateSliderValue(tenureSlider, tenureValue);
+        updateResults();
+    });
+    
+    rateSlider.addEventListener('input', () => {
+        updateSliderValue(rateSlider, rateValue, true);
+        updateResults();
+    });
+    
+    // Add event listeners for frequency options
+    document.querySelectorAll('input[name="frequency"]').forEach(radio => {
+        radio.addEventListener('change', updateResults);
+    });
+    
+    // Add event listener for calculate button
+    document.querySelector('.calculate-btn').addEventListener('click', updateResults);
+    
+    // Initial calculation
+    updateResults();
+});

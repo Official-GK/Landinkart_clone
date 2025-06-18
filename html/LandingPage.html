@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
   <title>Landing Page</title>
   <link rel="stylesheet" href="../css/LandingPage.css"/>
   <link rel="stylesheet" href="../css/navbar.css"/>
   <link rel="stylesheet" href="../css/eligibility-cards.css"/>
   <link rel="stylesheet" href="../css/chatbot.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <script src="../js/calculator.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../js/calculator.js" defer></script>
 </head>
 <body>
   <div class="main-block">
@@ -687,12 +689,16 @@
     </div>
   </div>
   <script src="../js/LandingPage.js" defer></script>
-  <script>
-  
-  </script>
   <script src="navbar.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 600, offset: 80 });</script>
   <script src="../js/chatbot.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({ 
+        once: true, 
+        duration: 600, 
+        offset: 80 
+      });
+    });
+  </script>
 </body>
 </html>

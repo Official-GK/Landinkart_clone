@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/eligibility-cards.css">
     <link rel="stylesheet" href="../css/c31.css">
     <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <!-- Navbar Start -->
@@ -152,20 +153,20 @@
                 <div class="results hidden">
                     <div class="result-box">
                         <h3>Invested Amount</h3>
-                        <p>Rs. 1,00,000</p>
+                        <p id="investedAmount">Rs. 1,00,000</p>
                     </div>
                     <div class="result-box">
                         <h3>Wealth Gains</h3>
-                        <p>Rs. 6,942</p>
+                        <p id="wealthGains">Rs. 6,942</p>
                     </div>
                     <div class="result-box">
                         <h3>Maturity Amount</h3>
-                        <p>Rs. 1,06,942</p>
+                        <p id="maturityAmount">Rs. 1,06,942</p>
                     </div>
                 </div>
                 
-                <div class="chart-container hidden">
-                    <!-- Chart will be rendered here by JS -->
+                <div class="chart-container">
+                    <canvas id="fdChart"></canvas>
                 </div>
             </div>
             

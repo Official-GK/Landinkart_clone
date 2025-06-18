@@ -56,6 +56,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(18, 169, 192, 0.3);
+    margin-top: -9px;
 }
 
 .slider::-moz-range-thumb {
@@ -68,17 +69,25 @@ body {
     border: none;
 }
 
+/* Remove old track styling */
+.slider::-webkit-slider-runnable-track,
+.slider::-moz-range-track {
+    display: none;
+}
+
 .value-box {
     position: absolute;
     right: 0;
     top: -30px;
     background: #12a9c0;
     color: white;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 22px;
     font-weight: 600;
-    box-shadow: 0 2px 6px rgba(18, 169, 192, 0.2);
+    box-shadow: 0 2px 8px rgba(18, 169, 192, 0.15);
+    min-width: 140px;
+    text-align: center;
 }
 
 .calculate-btn {

@@ -6,6 +6,7 @@ html, body {
     font-family: 'Inter', 'Open Sans', sans-serif;
     background: linear-gradient(117.55deg, #e7f7fe, #b6e7fc);
     min-height: 100vh;
+    position: relative;
 }
 
 .main-block {
@@ -226,18 +227,52 @@ html, body {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .main {
+        padding: 30px !important;
+    }
+
+    .section {
+        gap: 30px;
+    }
+
+    .image-part {
+        min-width: 350px;
+        height: 350px;
+    }
+
+    .text-part h4 {
+        font-size: 2rem;
+    }
+
+    .text-part p {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 992px) {
+    .main {
+        padding: 20px !important;
+    }
+
     .section {
         flex-direction: column;
         text-align: center;
+        gap: 40px;
+    }
+
+    .text-part {
+        text-align: center;
+        align-items: center;
     }
 
     .features-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
     }
 
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .trust-badges {
@@ -248,17 +283,410 @@ html, body {
         justify-content: center;
     }
 
-    .image-part, .secound-part .image-part {
-        height: 350px;
+    .image-part {
         min-width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    .third-part {
+        flex-direction: column;
+        padding: 40px 20px;
+        border-radius: 100px 20px 0 0;
+        gap: 30px;
+    }
+
+    .third-part .left-sides {
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    .third-part .right-side {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .loan-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .emi-slider-group {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .emi-slider {
+        width: 90%;
+        margin: 0 auto;
+        padding: 12px;
+    }
+
+    .loan-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .third-part h3 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .third-part p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .emi-slider label {
+        width: 100%;
+        text-align: left;
+    }
+
+    .emi-slider input[type=range] {
+        width: 100%;
+    }
+
+    .emi-slider span {
+        width: 100%;
+        text-align: left;
+    }
+
+    .seventh-part {
+        padding: 40px 20px;
+    }
+
+    .card-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-card, .right-card {
+        width: 100% !important;
+        height: 300px;
+    }
+
+    .middle-cards {
+        width: 100% !important;
+        gap: 20px;
+    }
+
+    .small-card {
+        width: 100% !important;
+        height: 200px;
     }
 }
 
 @media (max-width: 768px) {
-    .image-part, .secound-part .image-part {
-        height: 300px;
-        min-width: 250px;
+    .main {
+        padding: 15px !important;
     }
+
+    .first-part {
+        padding: 30px 0;
+    }
+
+    .section {
+        padding: 20px 10px;
+    }
+
+    .text-part h4 {
+        font-size: 1.8rem;
+    }
+
+    .text-part p {
+        font-size: 1.1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stat-item {
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.5em;
+    }
+
+    .trust-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .badge {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .image-part {
+        min-width: 250px;
+        height: 250px;
+    }
+
+    .third-part h3 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .third-part p {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .emi-slider-group {
+        width: 85%;
+    }
+
+    .emi-slider {
+        width: 85%;
+        padding: 10px;
+    }
+
+    .emi-slider label {
+        font-size: 1rem;
+    }
+
+    .emi-slider span {
+        font-size: 1rem;
+    }
+
+    .loan-card {
+        width: 85%;
+    }
+
+    .loan-card h4 {
+        font-size: 1.4rem;
+    }
+
+    .loan-amount {
+        font-size: 1.8rem;
+    }
+
+    .emi-amount {
+        font-size: 1.8rem;
+    }
+
+    .loan-card-btn {
+        font-size: 1.2rem;
+        padding: 15px 0;
+    }
+
+    .seventh-part {
+        padding: 30px 15px;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .card-container {
+        gap: 15px;
+    }
+
+    .left-card, .right-card {
+        height: 250px;
+    }
+
+    .small-card {
+        height: 180px;
+    }
+
+    .card-overlay, .card-overlay-half {
+        padding: 15px;
+    }
+
+    .card-overlay h3, .card-overlay-half h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .card-overlay p, .card-overlay-half p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 10px !important;
+    }
+
+    .section {
+        padding: 15px 10px;
+    }
+
+    .text-part h4 {
+        font-size: 1.6rem;
+    }
+
+    .text-part p {
+        font-size: 1rem;
+    }
+
+    .feature-item {
+        padding: 12px;
+    }
+
+    .feature-icon {
+        font-size: 1.2em;
+    }
+
+    .stat-item {
+        padding: 12px;
+    }
+
+    .stat-number {
+        font-size: 1.3em;
+    }
+
+    .image-part {
+        min-width: 200px;
+        height: 200px;
+    }
+
+    .third-part {
+        padding: 25px 10px;
+        border-radius: 30px 20px 0 0;
+    }
+
+    .third-part h3 {
+        font-size: 1.8rem;
+    }
+
+    .third-part p {
+        font-size: 1rem;
+    }
+
+    .emi-slider-group {
+        width: 80%;
+    }
+
+    .emi-slider {
+        width: 80%;
+        padding: 8px;
+    }
+
+    .emi-slider label {
+        font-size: 0.95rem;
+    }
+
+    .emi-slider span {
+        font-size: 0.95rem;
+    }
+
+    .loan-card {
+        width: 80%;
+    }
+
+    .loan-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .loan-amount {
+        font-size: 1.6rem;
+    }
+
+    .emi-amount {
+        font-size: 1.6rem;
+    }
+
+    .loan-card-btn {
+        font-size: 1.1rem;
+        padding: 12px 0;
+    }
+
+    .seventh-part {
+        padding: 25px 10px;
+    }
+
+    .heading {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    .card-container {
+        gap: 10px;
+    }
+
+    .left-card, .right-card {
+        height: 200px;
+    }
+
+    .small-card {
+        height: 150px;
+    }
+
+    .card-overlay, .card-overlay-half {
+        padding: 12px;
+    }
+
+    .card-overlay h3, .card-overlay-half h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .card-overlay p, .card-overlay-half p {
+        font-size: 0.9rem;
+    }
+
+    .emi-slider input[type=range] {
+        width: 90%;
+        margin: 8px auto;
+    }
+}
+
+/* Fix for mobile menu overlay */
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+}
+
+/* Ensure content doesn't overflow on mobile */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Fix for images in mobile view */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for buttons in mobile view */
+button, .button-group a {
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .third-part {
@@ -272,6 +700,8 @@ html, body {
     gap: 40px;
     margin: 0;
     border-radius: 200px 20px 0px 0px;
+    position: relative;
+    overflow: hidden;
 }
 
 .third-part .left-sides {
@@ -302,6 +732,9 @@ html, body {
     flex-direction: column;
     gap: 32px;
     padding-left: 70px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .emi-slider {
@@ -312,6 +745,9 @@ html, body {
     align-items: center;
     gap: 24px;
     position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .emi-slider label {
@@ -327,6 +763,9 @@ html, body {
     height: 4px;
     background: #e7f7fe;
     border-radius: 4px;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
 }
 
 .emi-slider span {
@@ -345,6 +784,9 @@ html, body {
     justify-content: flex-start;
     gap: 16px;
     margin-top: 120px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .loan-card {
@@ -1904,5 +2346,65 @@ body {
 .button-group button:last-child:hover {
   background: #023347;
   color: white;
+}
+
+/* Fix for card overlays on mobile */
+.card-overlay, .card-overlay-half {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2, 51, 71, 0.8);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background 0.3s ease;
+}
+
+.card-overlay-half {
+  background: linear-gradient(to bottom, rgba(2, 51, 71, 0.2), rgba(2, 51, 71, 0.9));
+}
+
+.card-overlay h3, .card-overlay-half h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.card-overlay p, .card-overlay-half p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Ensure proper image scaling in cards */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Add hover effects for better interaction */
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card:hover .card-overlay {
+  background: rgba(2, 51, 71, 0.9);
+}
+
+.card:hover .card-overlay-half {
+  background: linear-gradient(to bottom, rgba(2, 51, 71, 0.3), rgba(2, 51, 71, 1));
 }
 

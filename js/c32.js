@@ -37,9 +37,18 @@ const wealthGainedDisplay = document.getElementById('wealthGained');
 const maturityAmountDisplay = document.getElementById('maturityAmount');
 let rdChart = null;
 
+function updateSliderBackground(slider) {
+    const min = parseFloat(slider.min);
+    const max = parseFloat(slider.max);
+    const value = parseFloat(slider.value);
+    const percentage = ((value - min) / (max - min)) * 100;
+    slider.style.background = `linear-gradient(to right, #12a9c0 0%, #12a9c0 ${percentage}%, #e0e0e0 ${percentage}%, #e0e0e0 100%)`;
+}
+
 function updateSliderValue(slider, valueDisplay, isPercentage = false) {
     const value = parseFloat(slider.value);
     valueDisplay.textContent = isPercentage ? `${value.toFixed(1)}%` : formatIndianCurrency(value);
+    updateSliderBackground(slider);
 }
 
 function updateChart(results) {
@@ -87,6 +96,11 @@ function calculateAndDisplayResults() {
     resultsContainer.style.display = 'block';
 }
 
+// Initialize sliders
+updateSliderBackground(monthlyAmountSlider);
+updateSliderBackground(tenureSlider);
+updateSliderBackground(interestRateSlider);
+
 monthlyAmountSlider.addEventListener('input', () => {
     updateSliderValue(monthlyAmountSlider, monthlyAmountValue);
 });
@@ -96,7 +110,4 @@ tenureSlider.addEventListener('input', () => {
 interestRateSlider.addEventListener('input', () => {
     updateSliderValue(interestRateSlider, interestRateValue, true);
 });
-document.querySelector('.calculate-btn').addEventListener('click', calculateAndDisplayResults);
-updateSliderValue(monthlyAmountSlider, monthlyAmountValue);
-updateSliderValue(tenureSlider, tenureValue);
-updateSliderValue(interestRateSlider, interestRateValue, true); 
+document.querySelector('.calculate-btn').addEventListener('click', calculateAndDisplayResults); 

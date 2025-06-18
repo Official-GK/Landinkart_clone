@@ -16,37 +16,6 @@ window.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.custom-slider input[type=range]').forEach(updateSliderValue);
 });
 
-let sliderIndex = 1;
-const sliderImages = [
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
-  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
-];
-
-function renderSlider() {
-  const track = document.querySelector('.slider-track');
-  if (!track) return;
-  track.innerHTML = '';
-  // Show previous, current, next (circular)
-  const prev = (sliderIndex - 1 + sliderImages.length) % sliderImages.length;
-  const curr = sliderIndex;
-  const next = (sliderIndex + 1) % sliderImages.length;
-  [prev, curr, next].forEach((idx, i) => {
-    const img = document.createElement('img');
-    img.src = sliderImages[idx];
-    img.className = 'slider-img' + (i === 1 ? ' active' : '');
-    track.appendChild(img);
-  });
-}
-
-function moveSlider(dir) {
-  sliderIndex = (sliderIndex + dir + sliderImages.length) % sliderImages.length;
-  renderSlider();
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-  renderSlider();
-});
 
 // Card Carousel Auto Slide
 (function() {

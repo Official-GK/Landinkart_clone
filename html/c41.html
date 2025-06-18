@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="../css/c41.css">
     <link rel="stylesheet" href="../css/chatbot.css">
     <script src="../js/logo-redirect.js" defer></script>
+    <script src="../js/c41.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body style="background-color: white;">
+<body>
     <!-- Navbar Start -->
     <nav class="navbar">
         <div class="navbar-logo">
@@ -83,166 +85,167 @@
         </div>
     </nav>
     <!-- Navbar End -->
+
     <div class="page-layout">
         <div class="main-content">
-    <div class="calculator-container">
-        <h1 class="form-title">Loan Foreclosure Calculator</h1>
-        
-        <div class="input-group">
-            <label class="input-label">Loan Amount</label>
-            <div class="input-field">
+            <div class="calculator-container">
+                <h1 class="form-title">Loan Foreclosure Calculator</h1>
+                
+                <div class="input-group">
+                    <label class="input-label">Loan Amount</label>
+                    <div class="input-field">
                         <div class="range-input">
-                            <input type="range" id="loanAmount" min="10000" max="10000000" value="100000" step="1000" style="-webkit-appearance:none;appearance:none;width:100%;height:10px;background:#e0e0e0;border-radius:4px;outline:none;margin:10px 0;transition:background 0.3s;box-shadow:none;">
+                            <input type="range" id="loanAmount" min="10000" max="10000000" value="100000" step="1000">
                         </div>
                         <div class="value-input">
                             <input type="text" id="loanAmount-value" value="1,00,000">
                         </div>
                         <div class="unit">Rs.</div>
-            </div>
-        </div>
-        
-        <div class="input-group">
-            <label class="input-label">Interest Rate (Annually)</label>
-            <div class="input-field">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Interest Rate (Annually)</label>
+                    <div class="input-field">
                         <div class="range-input">
-                            <input type="range" id="interestRate" min="1" max="30" value="6" step="0.1" style="-webkit-appearance:none;appearance:none;width:100%;height:10px;background:#e0e0e0;border-radius:4px;outline:none;margin:10px 0;transition:background 0.3s;box-shadow:none;">
+                            <input type="range" id="interestRate" min="1" max="30" value="6" step="0.1">
                         </div>
                         <div class="value-input">
                             <input type="text" id="interestRate-value" value="6">
                         </div>
                         <div class="unit">%</div>
-            </div>
-        </div>
-        
-        <div class="input-group">
-            <label class="input-label">Tenure (In Months)</label>
-            <div class="input-field">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Tenure (In Months)</label>
+                    <div class="input-field">
                         <div class="range-input">
-                            <input type="range" id="tenure" min="6" max="240" value="12" step="1" style="-webkit-appearance:none;appearance:none;width:100%;height:10px;background:#e0e0e0;border-radius:4px;outline:none;margin:10px 0;transition:background 0.3s;box-shadow:none;">
+                            <input type="range" id="tenure" min="6" max="240" value="12" step="1">
                         </div>
                         <div class="value-input">
                             <input type="text" id="tenure-value" value="12">
                         </div>
                         <div class="unit">Months</div>
-            </div>
-        </div>
-        
-        <div class="input-group">
-            <label class="input-label">Installments Paid</label>
-            <div class="input-field">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label">Installments Paid</label>
+                    <div class="input-field">
                         <div class="range-input">
-                            <input type="range" id="installmentsPaid" min="0" max="240" value="0" step="1" style="-webkit-appearance:none;appearance:none;width:100%;height:10px;background:#e0e0e0;border-radius:4px;outline:none;margin:10px 0;transition:background 0.3s;box-shadow:none;">
+                            <input type="range" id="installmentsPaid" min="0" max="240" value="0" step="1">
                         </div>
                         <div class="value-input">
                             <input type="text" id="installmentsPaid-value" value="0">
                         </div>
                         <div class="unit">Paid</div>
-            </div>
-        </div>
-        
-        <button class="calculate-btn">Calculate</button>
-        
-        <div class="results-container">
-            <div class="result-item">
-                <span class="result-label">Foreclosure Amount:</span>
-                <span>Rs. 45,947</span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Monthly EMI Paid:</span>
-                <span>Rs. 4,303</span>
-            </div>
-            <div class="result-item">
-                <span class="result-label interest-paid">Interest Paid:</span>
-                <span>Rs. 250</span>
-            </div>
-            <div class="result-item">
-                <span class="result-label interest-saved">Interest Saved:</span>
-                <span>Rs. 1,390</span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Interest before Foreclosure:</span>
-                <span>Rs. 1,640</span>
+                    </div>
+                </div>
+                
+                <button class="calculate-btn">Calculate</button>
+                
+                <div class="results-container">
+                    <div class="result-item">
+                        <span>Foreclosure Amount</span>
+                        <span>Rs. 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Monthly EMI</span>
+                        <span>Rs. 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Interest Paid</span>
+                        <span>Rs. 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Interest Saved</span>
+                        <span>Rs. 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Total Interest before Foreclosure</span>
+                        <span>Rs. 0</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="foreclosureChart"></canvas>
+                    </div>
+                </div>
             </div>
             
-            <div class="chart-container">
-                [Chart Placeholder]
-            </div>
+            <table class="summary-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Monthly EMI</td>
+                    <td>Rs. 20,251</td>
+                </tr>
+                <tr>
+                    <td>Saved Interest</td>
+                    <td>80%</td>
+                </tr>
+                <tr>
+                    <td>Foreclosure Amount</td>
+                    <td>Rs. 1,00,417</td>
+                </tr>
+            </table>
+            
+            <section class="faq-section">
+                <h2>Frequently Asked Questions:</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What is a Foreclosure Calculator?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A Foreclosure Calculator helps you calculate the savings and charges involved in foreclosing your loan before its original tenure. It helps you make an informed decision about early loan closure.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>How is foreclosure amount calculated?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The foreclosure amount includes the remaining principal amount, any applicable foreclosure charges, and any other outstanding dues. The calculator helps you estimate this total amount.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What are foreclosure charges?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Foreclosure charges are fees levied by lenders when you close your loan before its original tenure. These charges typically range from 0-5% of the outstanding amount, depending on the lender and loan type.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>When is the best time to foreclose a loan?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The best time to foreclose depends on your financial situation, the remaining loan amount, and the foreclosure charges. Generally, it's beneficial if you have surplus funds and the savings on interest outweigh the foreclosure charges.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="toggle-icon">+</span>
+                        <h3>What documents are needed for foreclosure?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll need your loan account statement, identity proof, and the foreclosure amount. Some lenders may also require a written application for foreclosure. Check with your lender for specific requirements.</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
-    
-    <table class="summary-table">
-        <tr>
-            <th>Parameter</th>
-            <th>Value</th>
-        </tr>
-        <tr>
-            <td>Monthly EMI</td>
-            <td>Rs. 20,251</td>
-        </tr>
-        <tr>
-            <td>Saved Interest</td>
-            <td>80%</td>
-        </tr>
-        <tr>
-            <td>Foreclosure Amount</td>
-            <td>Rs. 1,00,417</td>
-        </tr>
-    </table>
-    
-    <section class="faq-section">
-        <h2>Frequently Asked Questions:</h2>
         
-        <div class="faq-item">
-            <div class="faq-question">
-                <span class="toggle-icon">+</span>
-                <h3>What is a Foreclosure Calculator?</h3>
-            </div>
-            <div class="faq-answer" style="display: none;">
-                <p>A Foreclosure Calculator helps you calculate the savings and charges involved in foreclosing your loan before its original tenure. It helps you make an informed decision about early loan closure.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <span class="toggle-icon">+</span>
-                <h3>How is foreclosure amount calculated?</h3>
-            </div>
-            <div class="faq-answer" style="display: none;">
-                <p>The foreclosure amount includes the remaining principal amount, any applicable foreclosure charges, and any other outstanding dues. The calculator helps you estimate this total amount.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <span class="toggle-icon">+</span>
-                <h3>What are foreclosure charges?</h3>
-            </div>
-            <div class="faq-answer" style="display: none;">
-                <p>Foreclosure charges are fees levied by lenders when you close your loan before its original tenure. These charges typically range from 0-5% of the outstanding amount, depending on the lender and loan type.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <span class="toggle-icon">+</span>
-                <h3>When is the best time to foreclose a loan?</h3>
-            </div>
-            <div class="faq-answer" style="display: none;">
-                <p>The best time to foreclose depends on your financial situation, the remaining loan amount, and the foreclosure charges. Generally, it's beneficial if you have surplus funds and the savings on interest outweigh the foreclosure charges.</p>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <div class="faq-question">
-                <span class="toggle-icon">+</span>
-                <h3>What documents are needed for foreclosure?</h3>
-            </div>
-            <div class="faq-answer" style="display: none;">
-                <p>You'll need your loan account statement, identity proof, and the foreclosure amount. Some lenders may also require a written application for foreclosure. Check with your lender for specific requirements.</p>
-            </div>
-        </div>
-    </section>
-        </div>
         <div class="right-sidebar">
             <!-- Eligibility Form -->
             <div class="eligibility-form">
